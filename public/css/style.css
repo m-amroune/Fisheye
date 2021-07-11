@@ -1,0 +1,24 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 1440px;
+}
+
+.header {
+  display: flex;
+  margin: 25px 0 0 50px;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+}
+.header__nav ul {
+  display: flex;
+}
+.header__nav ul li {
+  padding: 5px;
+  list-style: none;
+}
+
+/*# sourceMappingURL=style.css.map */
