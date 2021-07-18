@@ -5,13 +5,22 @@
   &__nav {
     display: flex;
     justify-content: space-between;
-
-    ul {
-      display: flex;
+  }
+  .tagsList {
+    display: flex;
+    list-style: none;
+    flex-wrap: nowrap;
+    justify-content: center;
+    & li {
+      padding: 2px 5px;
+      margin: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #901c1c;
     }
-    ul li {
-      padding: 5px;
-      list-style: none;
-    }
+  }
+  &__title {
+    color: #901c1c;
+    font-weight: 500;
   }
 }

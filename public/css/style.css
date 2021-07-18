@@ -13,12 +13,22 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.header__nav ul {
+.header .tagsList {
   display: flex;
-}
-.header__nav ul li {
-  padding: 5px;
   list-style: none;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.header .tagsList li {
+  padding: 2px 5px;
+  margin: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #901c1c;
+}
+.header__title {
+  color: #901c1c;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=style.css.map */
