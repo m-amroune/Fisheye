@@ -7,28 +7,82 @@ body {
 
 .header {
   display: flex;
+  position: relative;
   margin: 25px 0 0 50px;
-}
-.header__nav {
-  display: flex;
   justify-content: space-between;
-}
-.header .tagsList {
-  display: flex;
-  list-style: none;
+  align-items: center;
   flex-wrap: nowrap;
-  justify-content: center;
-}
-.header .tagsList li {
-  padding: 2px 5px;
-  margin: 4px;
-  font-weight: 600;
-  cursor: pointer;
-  color: #901c1c;
 }
 .header__title {
   color: #901c1c;
-  font-weight: 500;
+}
+
+nav {
+  position: absolute;
+  left: 370px;
+}
+
+.tagListNavigation {
+  display: flex;
+  align-items: center;
+}
+.tagListNavigation li {
+  border: 1px solid gray;
+  border-radius: 100px;
+  font-weight: 800;
+  padding: 3px;
+  color: #901c1c;
+  cursor: pointer;
+  margin: 2px;
+  list-style: none;
+}
+
+#photographersGallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.listArticle {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  align-items: center;
+}
+
+.imgPhotographer {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.namePhotographer {
+  color: #901c1c;
+  font-size: 30px;
+}
+
+.localisationPhotographer {
+  color: #901c1c;
+  margin-bottom: 1px;
+}
+
+.pricePhotographer {
+  color: gray;
+  margin: 10px;
+}
+
+.tagsList {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+.tagsList li {
+  border: 1px solid gray;
+  border-radius: 100px;
+  padding: 3px;
+  color: #901c1c;
+  cursor: pointer;
+  margin: 2px;
 }
 
 /*# sourceMappingURL=style.css.map */

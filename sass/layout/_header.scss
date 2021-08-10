@@ -1,26 +1,31 @@
 .header {
   display: flex;
+  position: relative;
   margin: 25px 0 0 50px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
 
-  &__nav {
-    display: flex;
-    justify-content: space-between;
-  }
-  .tagsList {
-    display: flex;
-    list-style: none;
-    flex-wrap: nowrap;
-    justify-content: center;
-    & li {
-      padding: 2px 5px;
-      margin: 4px;
-      font-weight: 600;
-      cursor: pointer;
-      color: #901c1c;
-    }
-  }
   &__title {
     color: #901c1c;
-    font-weight: 500;
+  }
+}
+nav {
+  position: absolute;
+  left: 370px;
+}
+.tagListNavigation {
+  display: flex;
+  align-items: center;
+
+  & li {
+    border: 1px solid gray;
+    border-radius: 100px;
+    font-weight: 800;
+    padding: 3px;
+    color: #901c1c;
+    cursor: pointer;
+    margin: 2px;
+    list-style: none;
   }
 }
