@@ -32,13 +32,21 @@ const photographersDisplay = async () => {
   for (let j = 0; j < HashtagsWithoutDuplicate.length; j++) {
     let listItem = document.createElement("li");
     listItem.textContent = listItem[j];
-    listItem.textContent = "#" + HashtagsWithoutDuplicate[j];
+    listItem.innerHTML = "<a>" + "#" + HashtagsWithoutDuplicate[j] + "</a>";
     tagsListNavigation.appendChild(listItem);
+    listItem.addEventListener("click", () => {
+      let cards = document.querySelectorAll(".cardPhotographer");
+      for (let card of cards) {
+        card.style.display = "flex";
+        if (!card.textContent.includes(HashtagsWithoutDuplicate[j])) {
+          card.style.display = "none";
+        }
+      }
+    });
+    // appendChild in nav
+    navigation.appendChild(tagsListNavigation);
+    header.appendChild(navigation);
   }
-
-  // appendChild in nav
-  navigation.appendChild(tagsListNavigation);
-  header.appendChild(navigation);
 
   for (let i = 0; i < photographersData.length; i++) {
     // creation elements main
@@ -49,6 +57,9 @@ const photographersDisplay = async () => {
     const detailsPara2 = document.createElement("p");
     const detailsPara3 = document.createElement("p");
     const tagsList = document.createElement("ul");
+
+    // creation class
+    listArticle.classList.add("cardPhotographer");
 
     imgPhotographer.classList.add("imgPhotographer");
     cardH2.classList.add("namePhotographer");
