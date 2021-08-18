@@ -27,5 +27,10 @@ nav {
     cursor: pointer;
     margin: 2px;
     list-style: none;
+
+    &:hover {
+      background-color: #901c1c;
+      color: #fff;
+    }
   }
 }

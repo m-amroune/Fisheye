@@ -36,6 +36,10 @@ nav {
   margin: 2px;
   list-style: none;
 }
+.tagListNavigation li:hover {
+  background-color: #901c1c;
+  color: #fff;
+}
 
 #photographersGallery {
   display: flex;
@@ -81,7 +85,6 @@ nav {
   border-radius: 100px;
   padding: 3px;
   color: #901c1c;
-  cursor: pointer;
   margin: 2px;
 }
 

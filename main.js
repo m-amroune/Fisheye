@@ -34,10 +34,12 @@ const photographersDisplay = async () => {
     listItem.textContent = listItem[j];
     listItem.innerHTML = "<a>" + "#" + HashtagsWithoutDuplicate[j] + "</a>";
     tagsListNavigation.appendChild(listItem);
-    listItem.addEventListener("click", () => {
+    listItem.addEventListener("click", (e) => {
       let cards = document.querySelectorAll(".cardPhotographer");
+
       for (let card of cards) {
         card.style.display = "flex";
+
         if (!card.textContent.includes(HashtagsWithoutDuplicate[j])) {
           card.style.display = "none";
         }
