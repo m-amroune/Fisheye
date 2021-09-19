@@ -11,11 +11,24 @@ class HomePage {
     const res = await fetch("data.json");
     const data = await res.json();
 
-    const photographers = data.photographers;
-    return photographers;
+    const photographersData = data.photographers;
+
+    for (let photographer of photographersData) {
+      let card = new PhotographerCard(
+        photographer.name,
+        photographer.id,
+        photographer.city,
+        photographer.country,
+        photographer.tags,
+        photographer.tagline,
+        photographer.price,
+        photographer.portrait
+      );
+      this.photographersData.push(card);
+    }
   }
 
-  displayPhotographersCard() {
+  display() {
     this.photographersData.forEach((photographer) => {
       this.section.appendChild(photographer.display());
     });
