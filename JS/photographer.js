@@ -20,7 +20,7 @@ export class PhotographerCard {
     const detailsPara3 = document.createElement("p");
     const tagsList = document.createElement("ul");
 
-    // creation class
+    // creation class elements main
     listArticle.classList.add("cardPhotographer");
     imgPhotographer.classList.add("imgPhotographer");
     cardH2.classList.add("namePhotographer");
@@ -30,7 +30,7 @@ export class PhotographerCard {
     tagsList.classList.add("tagsList");
     listArticle.classList.add("listArticle");
 
-    // integration  main
+    // integration elements for  main
     imgPhotographer.src =
       "./public/img/Photographers ID Photos/" + this.portrait;
     cardH2.textContent = this.name;
@@ -38,21 +38,21 @@ export class PhotographerCard {
     detailsPara2.textContent = this.tagline;
     detailsPara3.textContent = this.price + "€/jour";
 
-    // appendChild for add elements to their parents
+    // append elements in an article
 
-    listArticle.appendChild(imgPhotographer);
-    listArticle.appendChild(cardH2);
-    listArticle.appendChild(detailsPara1);
-    listArticle.appendChild(detailsPara2);
-    listArticle.appendChild(detailsPara3);
-    listArticle.appendChild(tagsList);
-    section.appendChild(listArticle);
+    listArticle.append(
+      imgPhotographer,
+      cardH2,
+      detailsPara1,
+      detailsPara2,
+      detailsPara3,
+      tagsList
+    );
 
-    let listTags = this.photographersData[i].tags;
-    for (let j = 0; j < listTags.length; j++) {
+    for (let j = 0; j < this.tags.length; j++) {
       let listItem = document.createElement("li");
-      listItem.textContent = listItem[j];
-      listItem.textContent = "#" + listTags[j];
+      listItem.textContent = this.tags[j];
+      listItem.textContent = "#" + this.tags[j];
       tagsList.appendChild(listItem);
     }
 

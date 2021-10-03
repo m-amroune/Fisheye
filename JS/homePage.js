@@ -1,5 +1,5 @@
 import { PhotographerCard } from "./photographer.js";
-class HomePage {
+export class HomePage {
   constructor() {
     this.section = document.getElementById("photographersGallery");
     this.header = document.querySelector(".header");
@@ -14,7 +14,7 @@ class HomePage {
     const photographersData = data.photographers;
 
     for (let photographer of photographersData) {
-      let card = new PhotographerCard(
+      const card = new PhotographerCard(
         photographer.name,
         photographer.id,
         photographer.city,
@@ -28,7 +28,7 @@ class HomePage {
     }
   }
 
-  display() {
+  displayPhotographers() {
     this.photographersData.forEach((photographer) => {
       this.section.appendChild(photographer.display());
     });
@@ -44,11 +44,11 @@ class HomePage {
     tagsListNavigation.classList.add("tagListNavigation");
     navigation.classList.add("navigation");
 
-    const listHashtags = this.headerTags.map(
-      (headerTags) => this.headerTags.tags
+    const listHashtags = this.photographersData.map(
+      (headerTags) => headerTags.tags
     ); // conversion in array
     console.log(listHashtags);
-    listHashtagsSingle = [].concat(...listHashtags); // single array
+    const listHashtagsSingle = [].concat(...listHashtags); // single array
     console.log(listHashtagsSingle);
     let HashtagsWithoutDuplicate = Array.from(new Set(listHashtagsSingle)); // delete duplication
     console.log(HashtagsWithoutDuplicate);
@@ -71,7 +71,7 @@ class HomePage {
       });
       // appendChild in nav
       navigation.appendChild(tagsListNavigation);
-      header.appendChild(navigation);
+      this.header.appendChild(navigation);
     }
   }
 }

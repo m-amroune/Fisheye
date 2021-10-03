@@ -8,6 +8,8 @@
 
   &__title {
     color: #901c1c;
+    font-size: 36px;
+    font-weight: 400;
   }
 }
 nav {
@@ -19,10 +21,11 @@ nav {
   align-items: center;
 
   & li {
-    border: 1px solid gray;
-    border-radius: 100px;
-    font-weight: 800;
-    padding: 3px;
+    border: 0.5px solid #c4c4c4;
+    border-radius: 11px;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 3px 7px 3px 7px;
     color: #901c1c;
     cursor: pointer;
     margin: 2px;

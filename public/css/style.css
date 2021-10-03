@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap");
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   max-width: 1440px;
+  font-family: DM SANS, sans-serif;
 }
 
 .header {
@@ -15,6 +17,8 @@ body {
 }
 .header__title {
   color: #901c1c;
+  font-size: 36px;
+  font-weight: 400;
 }
 
 nav {
@@ -27,10 +31,11 @@ nav {
   align-items: center;
 }
 .tagListNavigation li {
-  border: 1px solid gray;
-  border-radius: 100px;
-  font-weight: 800;
-  padding: 3px;
+  border: 0.5px solid #c4c4c4;
+  border-radius: 11px;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 3px 7px 3px 7px;
   color: #901c1c;
   cursor: pointer;
   margin: 2px;
@@ -56,36 +61,54 @@ nav {
 .imgPhotographer {
   width: 200px;
   height: 200px;
+  margin-top: 40px;
+  margin-bottom: 20px;
   border-radius: 100px;
   object-fit: cover;
 }
 
 .namePhotographer {
-  color: #901c1c;
-  font-size: 30px;
+  color: #d3573c;
+  font-size: 36px;
+  font-weight: 400;
+  margin: unset;
 }
 
 .localisationPhotographer {
   color: #901c1c;
-  margin-bottom: 1px;
+  margin: unset;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.citationPhotographer {
+  font-weight: 400;
+  font-size: 13px;
+  margin: unset;
+  margin-top: 3px;
 }
 
 .pricePhotographer {
-  color: gray;
-  margin: 10px;
+  color: #757575;
+  font-weight: 400;
+  font-size: 12px;
+  margin: unset;
+  margin-top: 3px;
 }
 
 .tagsList {
   display: flex;
   list-style: none;
-  justify-content: space-around;
+  padding-inline-start: 0;
 }
 .tagsList li {
-  border: 1px solid gray;
-  border-radius: 100px;
-  padding: 3px;
+  border: 0.5px solid #c4c4c4;
+  border-radius: 11px;
+  padding: 3px 7px 3px 7px;
   color: #901c1c;
-  margin: 2px;
+  font-weight: 500;
+  font-size: 12px;
+  margin: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */
