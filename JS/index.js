@@ -1,9 +1,10 @@
-import { HomePage } from "./homePage.js";
+import { HomePage } from "./HomePage.js";
 
 async function createHomePage() {
   let homePage = new HomePage();
-  await homePage.fetchPhotographer();
+  await homePage.fetchPhotographers();
   homePage.displayPhotographers();
   homePage.displayTags();
+  homePage.displayPassContent();
 }
 createHomePage();

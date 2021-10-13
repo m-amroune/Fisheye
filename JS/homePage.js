@@ -1,4 +1,4 @@
-import { PhotographerCard } from "./photographer.js";
+import { Photographer } from "./photographer.js";
 export class HomePage {
   constructor() {
     this.section = document.getElementById("photographersGallery");
@@ -7,14 +7,37 @@ export class HomePage {
     this.headerTags = [];
   }
 
-  async fetchPhotographer() {
+  displayPassContent() {
+    const passContentDiv = document.createElement("div");
+    const passContentLink = document.createElement("a");
+
+    passContentLink.classList.add("passContent");
+    const body = document.querySelector("body");
+    passContentLink.href = "#";
+    passContentLink.textContent = "Passer au contenu";
+    passContentDiv.append(passContentLink);
+    body.append(passContentDiv);
+    const passContent = document.querySelector(".passContent");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        passContent.style.display = "flex";
+      } else if (window.scrollY < 50) {
+        passContent.style.display = "none";
+      } else {
+        passContent.addEventListener("click", () => {
+          passContent.style.display = "none";
+        });
+      }
+    });
+  }
+
+  async fetchPhotographers() {
     const res = await fetch("data.json");
     const data = await res.json();
 
     const photographersData = data.photographers;
-
     for (let photographer of photographersData) {
-      const card = new PhotographerCard(
+      const card = new Photographer(
         photographer.name,
         photographer.id,
         photographer.city,
@@ -30,17 +53,18 @@ export class HomePage {
 
   displayPhotographers() {
     this.photographersData.forEach((photographer) => {
-      this.section.appendChild(photographer.display());
+      this.section.appendChild(photographer.displayCard());
     });
   }
+
+  // function for Header hashtags
+
   displayTags() {
     this.headerTags = new Set(this.headerTags);
 
-    // creation elements tags navigation
     const navigation = document.createElement("nav");
     const tagsListNavigation = document.createElement("ul");
 
-    // creation class tags navigation
     tagsListNavigation.classList.add("tagListNavigation");
     navigation.classList.add("navigation");
 
@@ -48,15 +72,21 @@ export class HomePage {
       (headerTags) => headerTags.tags
     ); // conversion in array
     console.log(listHashtags);
+
     const listHashtagsSingle = [].concat(...listHashtags); // single array
     console.log(listHashtagsSingle);
-    let HashtagsWithoutDuplicate = Array.from(new Set(listHashtagsSingle)); // delete duplication
-    console.log(HashtagsWithoutDuplicate);
+    let HashtagsNotDuplicate = Array.from(new Set(listHashtagsSingle)); // delete duplication
+    console.log(HashtagsNotDuplicate);
 
-    for (let j = 0; j < HashtagsWithoutDuplicate.length; j++) {
+    for (let j = 0; j < HashtagsNotDuplicate.length; j++) {
       let listItem = document.createElement("li");
       listItem.textContent = listItem[j];
-      listItem.innerHTML = "<a>" + "#" + HashtagsWithoutDuplicate[j] + "</a>";
+      listItem.innerHTML =
+        "<a>" +
+        "#" +
+        HashtagsNotDuplicate[j].charAt(0).toUpperCase() +
+        HashtagsNotDuplicate[j].slice(1);
+      +"</a>";
       tagsListNavigation.appendChild(listItem);
       listItem.addEventListener("click", () => {
         let cards = document.querySelectorAll(".cardPhotographer");
@@ -64,13 +94,16 @@ export class HomePage {
         for (let card of cards) {
           card.style.display = "flex";
 
-          if (!card.textContent.includes(HashtagsWithoutDuplicate[j])) {
+          if (!card.textContent.includes(HashtagsNotDuplicate[j])) {
             card.style.display = "none";
           }
         }
       });
+
+      // event for content link
+
       // appendChild in nav
-      navigation.appendChild(tagsListNavigation);
+      navigation.append(tagsListNavigation);
       this.header.appendChild(navigation);
     }
   }

@@ -2,3 +2,17 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.passContent {
+  position: fixed;
+  color: #000;
+  background-color: #db8876;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 700;
+  top: 30px;
+  left: 33%;
+  cursor: pointer;
+  display: none;
+  text-decoration: none;
+}
