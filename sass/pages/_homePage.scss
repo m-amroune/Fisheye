@@ -1,6 +1,15 @@
 #photographersGallery {
   display: flex;
+  margin: 25px 0 0 0;
   flex-wrap: wrap;
+  align-content: space-between;
+
+  &.cardPhotographer {
+    color: #901c1c;
+    font-size: 36px;
+    font-weight: 400;
+    top: 10px;
+  }
 }
 
 .passContent {
@@ -10,9 +19,24 @@
   border-radius: 5px;
   padding: 5px;
   font-weight: 700;
+  font-size: 18px;
   top: 30px;
-  left: 33%;
+  left: 36%;
   cursor: pointer;
   display: none;
   text-decoration: none;
+}
+
+.main {
+  position: relative;
+
+  &__title {
+    position: absolute;
+    right: 250px;
+    top: -105px;
+    width: 306px;
+    color: #901c1c;
+    font-weight: 400;
+    font-size: 36px;
+  }
 }

@@ -6,7 +6,7 @@ export class DetailsPage {
     this.photographer = "";
     this.medias = [];
     this.header = document.querySelector(".photographer-header");
-    this.main = document.querySelector(".main");
+    this.main = document.querySelector(".main-photographer");
   }
 
   async fetchPhotographer(id) {

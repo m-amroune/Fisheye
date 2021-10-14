@@ -9,26 +9,14 @@ body {
 
 .header {
   display: flex;
-  position: relative;
-  margin: 25px 0 0 50px;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-.header__title {
-  color: #901c1c;
-  font-size: 36px;
-  font-weight: 400;
-}
-
-nav {
-  position: absolute;
-  left: 370px;
+  margin-top: 25px;
+  margin-left: 50px;
 }
 
 .tagListNavigation {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .tagListNavigation li {
   border: 0.5px solid #c4c4c4;
@@ -48,7 +36,15 @@ nav {
 
 #photographersGallery {
   display: flex;
+  margin: 25px 0 0 0;
   flex-wrap: wrap;
+  align-content: space-between;
+}
+#photographersGallery.cardPhotographer {
+  color: #901c1c;
+  font-size: 36px;
+  font-weight: 400;
+  top: 10px;
 }
 
 .passContent {
@@ -58,8 +54,9 @@ nav {
   border-radius: 5px;
   padding: 5px;
   font-weight: 700;
+  font-size: 18px;
   top: 30px;
-  left: 33%;
+  left: 36%;
   cursor: pointer;
   display: none;
   text-decoration: none;
@@ -68,7 +65,20 @@ nav {
 .main {
   position: relative;
 }
-.main .imgPhotographerProfile {
+.main__title {
+  position: absolute;
+  right: 250px;
+  top: -105px;
+  width: 306px;
+  color: #901c1c;
+  font-weight: 400;
+  font-size: 36px;
+}
+
+.main-photographer {
+  position: relative;
+}
+.main-photographer .imgPhotographerProfile {
   width: 200px;
   height: 200px;
   border-radius: 100px;
@@ -77,20 +87,20 @@ nav {
   right: 50px;
   object-fit: cover;
 }
-.main .infoPhotographer {
+.main-photographer .infoPhotographer {
   background-color: #fafafa;
   height: 250px;
 }
-.main .infoPhotographer h1 {
+.main-photographer .infoPhotographer h1 {
   color: #901c1c;
   font-size: 40px;
   font-weight: 400;
 }
-.main .tagsListProfile {
+.main-photographer .tagsListProfile {
   list-style-type: none;
   display: flex;
 }
-.main .tagsListProfile li {
+.main-photographer .tagsListProfile li {
   border: 0.5px solid #c4c4c4;
   border-radius: 11px;
   padding: 3px 7px 3px 7px;
@@ -105,6 +115,8 @@ nav {
   flex-direction: column;
   width: 33%;
   align-items: center;
+  margin-left: -80px;
+  margin-right: 80px;
 }
 .listArticle a {
   text-decoration: none;

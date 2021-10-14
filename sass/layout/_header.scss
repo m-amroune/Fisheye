@@ -1,24 +1,13 @@
 .header {
   display: flex;
-  position: relative;
-  margin: 25px 0 0 50px;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
+  margin-top: 25px;
+  margin-left: 50px;
+}
 
-  &__title {
-    color: #901c1c;
-    font-size: 36px;
-    font-weight: 400;
-  }
-}
-nav {
-  position: absolute;
-  left: 370px;
-}
 .tagListNavigation {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 
   & li {
     border: 0.5px solid #c4c4c4;
@@ -37,6 +26,3 @@ nav {
     }
   }
 }
-
-
-

@@ -100,8 +100,6 @@ export class HomePage {
         }
       });
 
-      // event for content link
-
       // appendChild in nav
       navigation.append(tagsListNavigation);
       this.header.appendChild(navigation);
