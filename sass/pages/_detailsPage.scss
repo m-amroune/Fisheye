@@ -1,28 +1,41 @@
-.main-photographer {
+.bannerPhotographer {
   position: relative;
+  display: flex;
+  margin-left: 50px;
+  margin-top: 25px;
+  width: 1400px;
+  background-color: #fafafa;
+  justify-content: space-between;
+  align-items: center;
 
   & .imgPhotographerProfile {
     width: 200px;
     height: 200px;
+    margin-right: 50px;
     border-radius: 100px;
-    position: absolute;
     bottom: 30px;
     right: 50px;
     object-fit: cover;
   }
   & .infoPhotographer {
-    background-color: #fafafa;
-    height: 250px;
+    margin-left: 40px;
 
     & h1 {
       color: #901c1c;
       font-size: 40px;
       font-weight: 400;
     }
+
+    & .localisationPhotographerProfile {
+      color: #901c1c;
+      font-size: 20px;
+    }
   }
+
   .tagsListProfile {
     list-style-type: none;
     display: flex;
+    margin-left: -42px;
 
     & li {
       border: 0.5px solid #c4c4c4;
@@ -34,4 +47,18 @@
       margin: 5px;
     }
   }
+}
+
+.contactMe {
+  position: absolute;
+  cursor: pointer;
+  background-color: #901c1c;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 5px;
+  height: 40px;
+  width: 170px;
+  font-size: 18px;
+  top: 35px;
+  left: 450px;
 }

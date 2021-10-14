@@ -59,9 +59,10 @@ export class Photographer {
     return listArticle;
   }
   displayDetails() {
-    const infoSection = document.createElement("section");
+    const bannerSection = document.createElement("section");
+    const infoDiv = document.createElement("div");
     const contactBtn = document.createElement("button");
-    const imgSection = document.createElement("section");
+    const imgDiv = document.createElement("div");
 
     const nameH1 = document.createElement("h1");
     const localisation = document.createElement("p");
@@ -69,9 +70,10 @@ export class Photographer {
     const tagsList = document.createElement("ul");
     const imgPhotographer = document.createElement("img");
 
-    infoSection.classList.add("infoPhotographer");
+    bannerSection.classList.add("bannerPhotographer");
+    infoDiv.classList.add("infoPhotographer");
     contactBtn.classList.add("contactMe");
-    imgSection.classList.add("PicturePhotographer");
+    imgDiv.classList.add("PicturePhotographer");
     nameH1.classList.add("namePhotographerProfile");
     localisation.classList.add("localisationPhotographerProfile");
     citation.classList.add("citationPhotographerProfile");
@@ -82,7 +84,10 @@ export class Photographer {
     localisation.textContent = `${this.city}, ${this.country}`;
     citation.textContent = `${this.tagline}`;
 
-    infoSection.append(nameH1, localisation, citation, tagsList, imgSection);
+    contactBtn.textContent = "Contactez-moi";
+
+    bannerSection.append(infoDiv, contactBtn, imgDiv);
+    infoDiv.append(nameH1, localisation, citation, tagsList);
 
     for (let j = 0; j < this.tags.length; j++) {
       let listItem = document.createElement("li");
@@ -92,7 +97,7 @@ export class Photographer {
     }
     imgPhotographer.src =
       "./public/img/Photographers ID Photos/" + this.portrait;
-    imgSection.appendChild(imgPhotographer);
-    return infoSection;
+    imgDiv.appendChild(imgPhotographer);
+    return bannerSection;
   }
 }
