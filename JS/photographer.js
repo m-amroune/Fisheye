@@ -8,6 +8,7 @@ export class Photographer {
     this.tagline = tagline;
     this.price = price;
     this.portrait = portrait;
+    this.photographerName = document.querySelector("#ph-name-contact");
   }
   // function for one photographer card
   displayCard() {
@@ -85,6 +86,9 @@ export class Photographer {
     citation.textContent = `${this.tagline}`;
 
     contactBtn.textContent = "Contactez-moi";
+
+    // Name photographer for contact form
+    this.photographerName.innerHTML = "<br>" + this.name;
 
     bannerSection.append(infoDiv, contactBtn, imgDiv);
     infoDiv.append(nameH1, localisation, citation, tagsList);

@@ -1,14 +1,17 @@
 import { DetailsPage } from "./DetailsPage.js";
+import { Modal } from "./Modal.js";
 
 async function createDetailsPage() {
   let detailsPage = new DetailsPage();
-  const urlParams = new URLSearchParams(window.location.search);
+  let urlParams = new URLSearchParams(window.location.search);
   const photographerId = urlParams.get("id");
-  console.log(photographerId);
   const idNumber = parseInt(photographerId, 10);
   await detailsPage.fetchPhotographer(idNumber);
-  console.log(idNumber);
-  console.log(detailsPage.photographer);
   detailsPage.displayPhotographer();
+
+  let modal = new Modal();
+  modal.launchModal();
+  modal.closeModal();
+  modal.submitModal();
 }
 createDetailsPage();

@@ -1,5 +1,5 @@
-import { Photographer } from "./photographer.js";
-import { MediaFactory } from "./media.js";
+import { Photographer } from "./Photographer.js";
+import { Modal } from "./Modal.js";
 
 export class DetailsPage {
   constructor() {
@@ -31,9 +31,13 @@ export class DetailsPage {
       }
     }
     console.log(this.photographer);
+    // this.modal = new Modal(this.photographer.name);
   }
 
   displayPhotographer() {
     this.main.appendChild(this.photographer.displayDetails());
+    // this.modal.launchModal();
+    // this.modal.closeModal();
+    // this.modal.submitModal();
   }
 }

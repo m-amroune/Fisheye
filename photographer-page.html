@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FishEye</title>
     <link rel="stylesheet" href="public/css/style.css">
+    <script src="https://kit.fontawesome.com/8ee594dbf8.js" crossorigin="anonymous"></script>
+
+
 </head>
 
 <body>
@@ -25,9 +28,46 @@
 
     </main>
 
+    <!--Modal -->
+
+    <div id="background">
+        <div id="form">
+            <form id="form-content" action="">
+                <header>
+
+                    <h1 class="contact-title">
+                        <span>Contactez-moi</span>
+                        <span id="ph-name-contact"></span>
+                    </h1>
+                    <button id="close-btn">
+                        <span class="fas fa-times close-form-icon"></span>
+                    </button>
+                </header>
+
+                <div class="form-data">
+                    <label for="first-name">Prénom</label>
+                    <input id="first-name" type="text">
+                </div>
+                <div class="form-data">
+                    <label for="last-name">Nom</label>
+                    <input id="last-name" type="text">
+                </div>
+                <div class="form-data">
+                    <label for="email">Email</label>
+                    <input id="email" type="email">
+                </div>
+                <div class="form-data">
+                    <label for="message">Votre message</label>
+                    <textarea name="" id="message" cols="30" rows="10"></textarea>
+                </div>
+                <input class="form-submit" type="submit">
+            </form>
+        </div>
+    </div>
 
 
     <script type="module" src="JS/details.js"></script>
+
 </body>
 
 </html>
