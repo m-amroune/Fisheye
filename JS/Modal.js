@@ -1,7 +1,5 @@
 export class Modal {
-  constructor(name) {
-    this.name = name;
-    console.log(this.name);
+  constructor() {
     this.modalBackground = document.querySelector("#background");
     this.btnContact = document.querySelector(".contactMe");
     this.closeBtn = document.querySelector("#close-btn");

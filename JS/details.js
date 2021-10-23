@@ -8,6 +8,8 @@ async function createDetailsPage() {
   const idNumber = parseInt(photographerId, 10);
   await detailsPage.fetchPhotographer(idNumber);
   detailsPage.displayPhotographer();
+  await detailsPage.fetchMedia(idNumber);
+  detailsPage.displayMedias();
 
   let modal = new Modal();
   modal.launchModal();

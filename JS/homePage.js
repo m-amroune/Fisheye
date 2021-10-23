@@ -35,8 +35,7 @@ export class HomePage {
     const res = await fetch("data.json");
     const data = await res.json();
 
-    const photographersData = data.photographers;
-    for (let photographer of photographersData) {
+    for (let photographer of data.photographers) {
       const card = new Photographer(
         photographer.name,
         photographer.id,

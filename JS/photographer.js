@@ -59,6 +59,7 @@ export class Photographer {
 
     return listArticle;
   }
+
   displayDetails() {
     const bannerSection = document.createElement("section");
     const infoDiv = document.createElement("div");
