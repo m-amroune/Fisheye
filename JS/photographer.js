@@ -61,7 +61,7 @@ export class Photographer {
   }
 
   displayDetails() {
-    const bannerSection = document.createElement("section");
+    const bannerArticle = document.createElement("article");
     const infoDiv = document.createElement("div");
     const contactBtn = document.createElement("button");
     const imgDiv = document.createElement("div");
@@ -72,7 +72,7 @@ export class Photographer {
     const tagsList = document.createElement("ul");
     const imgPhotographer = document.createElement("img");
 
-    bannerSection.classList.add("bannerPhotographer");
+    bannerArticle.classList.add("bannerPhotographer");
     infoDiv.classList.add("infoPhotographer");
     contactBtn.classList.add("contactMe");
     imgDiv.classList.add("PicturePhotographer");
@@ -91,7 +91,7 @@ export class Photographer {
     // Name photographer for contact form
     this.photographerName.innerHTML = "<br>" + this.name;
 
-    bannerSection.append(infoDiv, contactBtn, imgDiv);
+    bannerArticle.append(infoDiv, contactBtn, imgDiv);
     infoDiv.append(nameH1, localisation, citation, tagsList);
 
     for (let j = 0; j < this.tags.length; j++) {
@@ -103,6 +103,6 @@ export class Photographer {
     imgPhotographer.src =
       "./public/img/Photographers ID Photos/" + this.portrait;
     imgDiv.appendChild(imgPhotographer);
-    return bannerSection;
+    return bannerArticle;
   }
 }

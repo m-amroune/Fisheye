@@ -40,6 +40,7 @@ body {
 }
 
 #background {
+  position: fixed;
   background-color: #db8876;
   border-radius: 5px;
   width: 400px;
@@ -47,9 +48,9 @@ body {
   display: none;
   position: fixed;
   z-index: 10;
-  position: relative;
-  top: -780px;
-  left: 300px;
+  margin: 0 auto;
+  top: 10%;
+  left: 15%;
 }
 
 #form-content {
@@ -154,14 +155,15 @@ body {
   background-color: #fafafa;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
+}
+.bannerPhotographer .PicturePhotographer {
+  margin-right: 40px;
 }
 .bannerPhotographer .imgPhotographerProfile {
   width: 200px;
   height: 200px;
-  margin-right: 50px;
   border-radius: 100px;
-  bottom: 30px;
-  right: 50px;
   object-fit: cover;
 }
 .bannerPhotographer .infoPhotographer {
@@ -201,8 +203,29 @@ body {
   height: 40px;
   width: 170px;
   font-size: 18px;
-  top: 35px;
+  top: 45px;
   left: 450px;
+}
+
+.media-selection {
+  display: flex;
+  margin-left: 45px;
+  margin-top: 30px;
+}
+.media-selection span {
+  margin-right: 10px;
+  font-weight: bold;
+}
+.media-selection .media-filters {
+  display: flex;
+  flex-direction: column;
+}
+.media-selection .media-filters button {
+  background-color: #901c1c;
+  color: #fff;
+}
+.media-selection .media-filters ul {
+  list-style-type: none;
 }
 
 .listArticle {
@@ -272,6 +295,41 @@ body {
   font-weight: 500;
   font-size: 12px;
   margin: 5px;
+}
+
+.photographer-work {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.photographer-work figcaption {
+  display: flex;
+  justify-content: space-between;
+}
+.photographer-work figcaption h2 {
+  color: #901c1c;
+  font-weight: 400;
+  margin-top: 16px;
+  font-size: 1.2rem;
+}
+.photographer-work figcaption .photographer-work-elements {
+  display: flex;
+}
+.photographer-work figcaption .photographer-work-elements p {
+  color: #901c1c;
+}
+.photographer-work figcaption .photographer-work-elements span i {
+  padding-top: 20px;
+  padding-left: 5px;
+  color: #901c1c;
+  font-size: 0.9rem;
+}
+
+.photographer-work-img {
+  height: 300px;
+  width: 350px;
+  border-radius: 5px;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,39 @@
+.photographer-work {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  figcaption {
+    display: flex;
+    justify-content: space-between;
+
+    & h2 {
+      color: #901c1c;
+      font-weight: 400;
+      margin-top: 16px;
+      font-size: 1.2rem;
+    }
+
+    & .photographer-work-elements {
+      display: flex;
+
+      & p {
+        color: #901c1c;
+      }
+
+      & span i {
+        padding-top: 20px;
+        padding-left: 5px;
+        color: #901c1c;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.photographer-work-img {
+  height: 300px;
+  width: 350px;
+  border-radius: 5px;
+  object-fit: cover;
+}

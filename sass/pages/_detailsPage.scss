@@ -7,14 +7,16 @@
   background-color: #fafafa;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
+
+  .PicturePhotographer {
+    margin-right: 40px;
+  }
 
   & .imgPhotographerProfile {
     width: 200px;
     height: 200px;
-    margin-right: 50px;
     border-radius: 100px;
-    bottom: 30px;
-    right: 50px;
     object-fit: cover;
   }
   & .infoPhotographer {
@@ -59,6 +61,31 @@
   height: 40px;
   width: 170px;
   font-size: 18px;
-  top: 35px;
+  top: 45px;
   left: 450px;
+}
+
+.media-selection {
+  display: flex;
+  margin-left: 45px;
+  margin-top: 30px;
+
+  & span {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  & .media-filters {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      background-color: #901c1c;
+      color: #fff;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+  }
 }

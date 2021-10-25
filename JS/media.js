@@ -18,24 +18,36 @@ class ImageFactory {
   }
   displayMedia() {
     const imgArticle = document.createElement("article");
+    const imgFigure = document.createElement("figure");
     const imgLink = document.createElement("a");
     const imgMedia = document.createElement("img");
-    const imgElements = document.createElement("div");
+    const imgFigcaption = document.createElement("figcaption");
     const imgTitle = document.createElement("h2");
-    const imgLikes = document.createElement("span");
+    const imgInfoLikes = document.createElement("div");
+    const imgNbrLikes = document.createElement("p");
+    const imgLinkHeart = document.createElement("a");
+    const imgHeart = document.createElement("span");
 
     imgArticle.classList.add("photographer-work-article");
     imgLink.classList.add("photographer-work-link");
     imgMedia.classList.add("photographer-work-img");
-    imgElements.classList.add("photographer-work-elements");
+    imgFigcaption.classList.add("photographer-work-info");
     imgTitle.classList.add("photographer-work-title");
-    imgLikes.classList.add("photographer-work-likes");
+    imgNbrLikes.classList.add("photographer-work-nbr-likes");
+    imgInfoLikes.classList.add("photographer-work-elements");
+    imgHeart.classList.add("photographer-work-heart");
 
     imgMedia.src = "./public/img/Media/" + this.src;
+    imgTitle.textContent = `${this.title}`;
+    imgNbrLikes.textContent = `${this.likes}`;
+    imgHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true"></i>`;
 
-    imgArticle.append(imgLink, imgElements);
+    imgArticle.append(imgFigure);
+    imgFigure.append(imgLink, imgFigcaption);
     imgLink.append(imgMedia);
-    imgElements.append(imgTitle, imgLikes);
+    imgFigcaption.append(imgTitle, imgInfoLikes);
+    imgInfoLikes.append(imgNbrLikes, imgLinkHeart);
+    imgLinkHeart.append(imgHeart);
 
     return imgArticle;
   }
@@ -44,7 +56,7 @@ class ImageFactory {
 class VideoFactory {
   constructor(props) {
     this.id = props.id;
-    this.url = props.url;
+    this.src = props.src;
     this.title = props.title;
     this.photographerId = props.photographerId;
     this.tags = props.tags;
@@ -54,21 +66,36 @@ class VideoFactory {
   }
   displayMedia() {
     const videoArticle = document.createElement("article");
+    const videoFigure = document.createElement("figure");
     const videoLink = document.createElement("a");
     const videoMedia = document.createElement("video");
-    const videoElements = document.createElement("div");
+    const videoFigcaption = document.createElement("figcaption");
     const videoTitle = document.createElement("h2");
-    const videoLikes = document.createElement("span");
+    const videoInfoLikes = document.createElement("div");
+    const videoNbrLikes = document.createElement("p");
+    const videoLinkHeart = document.createElement("a");
+    const videoHeart = document.createElement("span");
 
     videoArticle.classList.add("photographer-work-article");
     videoLink.classList.add("photographer-work-link");
-    videoMedia.classList.add("photographer-work-video");
-    videoElements.classList.add("photographer-work-elements");
+    videoMedia.classList.add("photographer-work-img");
+    videoFigcaption.classList.add("photographer-work-info");
     videoTitle.classList.add("photographer-work-title");
-    videoLikes.classList.add("photographer-work-likes");
+    videoNbrLikes.classList.add("photographer-work-nbr-likes");
+    videoInfoLikes.classList.add("photographer-work-elements");
+    videoHeart.classList.add("photographer-work-heart");
 
-    videoArticle.append(videoLink, videoElements);
-    videoElements.append(videoTitle, videoLikes);
+    videoMedia.src = "./public/img/Media/" + this.src;
+    videoTitle.textContent = `${this.title}`;
+    videoNbrLikes.textContent = `${this.likes}`;
+    videoHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true"></i>`;
+
+    videoArticle.append(videoFigure);
+    videoFigure.append(videoLink, videoFigcaption);
+    videoLink.append(videoMedia);
+    videoFigcaption.append(videoTitle, videoInfoLikes);
+    videoInfoLikes.append(videoNbrLikes, videoLinkHeart);
+    videoLinkHeart.append(videoHeart);
 
     return videoArticle;
   }
