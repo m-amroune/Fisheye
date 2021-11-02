@@ -10,6 +10,9 @@ async function createDetailsPage() {
   detailsPage.displayPhotographer();
   await detailsPage.fetchMedia(idNumber);
   detailsPage.displayMedias();
+  detailsPage.openDropdown();
+  detailsPage.closeDropdown();
+  detailsPage.sortBy();
 
   let modal = new Modal();
   modal.launchModal();

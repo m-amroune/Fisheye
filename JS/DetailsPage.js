@@ -8,6 +8,28 @@ export class DetailsPage {
     this.header = document.querySelector(".photographer-header");
     this.banner = document.querySelector(".photographer-banner");
     this.photographerWork = document.querySelector(".photographer-work");
+    this.dropdownOptions = document.querySelector("#dropdown-options");
+    this.popularity = document.querySelector("#optionPopularity");
+    this.date = document.querySelector("#optionDate");
+    this.title = document.querySelector("#optionTitle");
+    this.btnDown = document.querySelector("#btn-down");
+    this.btnUp = document.querySelector("#btn-up");
+
+    this.date.addEventListener("click", (e) => {
+      this.removeGallery();
+      this.sortBy("Date");
+      this.displayMedias();
+    });
+    this.popularity.addEventListener("click", (e) => {
+      this.removeGallery();
+      this.sortBy("Popularity");
+      this.displayMedias();
+    });
+    this.title.addEventListener("click", (e) => {
+      this.removeGallery();
+      this.sortBy("Title");
+      this.displayMedias();
+    });
   }
 
   async fetchPhotographer(id) {
@@ -31,7 +53,6 @@ export class DetailsPage {
     console.log(this.photographer);
     // this.modal = new Modal(this.photographer.name);
   }
-
   displayPhotographer() {
     this.banner.appendChild(this.photographer.displayDetails());
     // this.modal.launchModal();
@@ -71,6 +92,50 @@ export class DetailsPage {
       }
     }
   }
+
+  // SORT BY TITLE, DATE AND POPULARITY
+
+  sortBy(type) {
+    let sortingMedias = [];
+    if (type === "Popularity") {
+      sortingMedias = this.medias.sort(function (a, b) {
+        return b.likes - a.likes;
+      });
+    } else if (type === "Date") {
+      sortingMedias = this.medias.sort(function (a, b) {
+        return new Date(a.date) - new Date(b.date);
+      });
+    } else if (type === "Title") {
+      sortingMedias = this.medias.sort((a, b) => {
+        return a.title > b.title ? 1 : b.title > a.title ? -1 : 0;
+      });
+    }
+    console.log(sortingMedias);
+    this.displayMedias(sortingMedias);
+  }
+
+  removeGallery() {
+    const gallery = document.querySelectorAll(".photographer-work-article");
+    for (let media of gallery) {
+      this.photographerWork.removeChild(media);
+    }
+  }
+
+  // OPEN AND CLOSE DROPDOWN
+
+  openDropdown() {
+    this.btnDown.addEventListener("click", () => {
+      this.dropdownOptions.style.display = "flex";
+    });
+  }
+
+  closeDropdown() {
+    this.btnUp.addEventListener("click", () => {
+      this.dropdownOptions.style.display = "none";
+    });
+  }
+
+  // DISPLAY MEDIAS
 
   displayMedias() {
     for (let media of this.medias) {

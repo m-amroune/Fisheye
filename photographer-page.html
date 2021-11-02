@@ -26,21 +26,24 @@
         <section class="photographer-banner">
 
         </section>
-        <div class="media-selection">
-            <span>Trier par</span>
-            <div class="media-filters">
-                <button>
+
+        <!--  Dropdown -->
+
+        <div class="dropdown">
+            <label class="sort-by">Trier par</label>
+            <div class="dropdown-sorting">
+                <button id="btn-down">
                     <span>Popularité</span>
-                    <span class="arrows fas fa-chevron-down"></span>
+                    <span class="chevron fas fa-chevron-down"></span>
                 </button>
-                <div>
-                    <ul>
-                        <li>Popularité <span></span></li>
-                        <li>Date</li>
-                        <li>Titre</li>
+                <div id="dropdown-options">
+                    <ul class="dropdown-sorting-choices">
+                        <li class="dropdown-sorting-choice" id="optionPopularity">Popularité</li>
+                        <li class="dropdown-sorting-choice" id="optionDate">Date</li>
+                        <li class="dropdown-sorting-choice" id="optionTitle">Titre</li>
                     </ul>
-                    <button>
-                        <span class="arrows fas fa-chevron-up"></span>
+                    <button id="btn-up">
+                        <span class="chevron fas fa-chevron-up"></span>
                     </button>
                 </div>
             </div>
@@ -48,6 +51,14 @@
         <section class="photographer-work">
 
         </section>
+
+        <div class="counter">
+            <div class="total-likes">
+                <p class="total-likes-number"></p>
+                <span class="fas fa-heart"></span>
+            </div>
+            <div class="price-day"></div>
+        </div>
 
     </main>
 
@@ -87,6 +98,8 @@
             </form>
         </div>
     </div>
+
+    <!-- Lightbox -->
 
 
     <script type="module" src="JS/details.js"></script>

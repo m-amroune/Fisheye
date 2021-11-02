@@ -64,28 +64,3 @@
   top: 45px;
   left: 450px;
 }
-
-.media-selection {
-  display: flex;
-  margin-left: 45px;
-  margin-top: 30px;
-
-  & span {
-    margin-right: 10px;
-    font-weight: bold;
-  }
-
-  & .media-filters {
-    display: flex;
-    flex-direction: column;
-
-    button {
-      background-color: #901c1c;
-      color: #fff;
-    }
-
-    ul {
-      list-style-type: none;
-    }
-  }
-}
