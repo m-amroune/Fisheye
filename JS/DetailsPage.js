@@ -1,5 +1,6 @@
 import { Photographer } from "./Photographer.js";
 import { MediaFactory } from "./Media.js";
+import { Lightbox } from "./Lightbox.js";
 
 export class DetailsPage {
   constructor() {
@@ -51,13 +52,9 @@ export class DetailsPage {
       }
     }
     console.log(this.photographer);
-    // this.modal = new Modal(this.photographer.name);
   }
   displayPhotographer() {
     this.banner.appendChild(this.photographer.displayDetails());
-    // this.modal.launchModal();
-    // this.modal.closeModal();
-    // this.modal.submitModal();
   }
 
   async fetchMedia(id) {
@@ -110,8 +107,6 @@ export class DetailsPage {
         return a.title > b.title ? 1 : b.title > a.title ? -1 : 0;
       });
     }
-    console.log(sortingMedias);
-    this.displayMedias(sortingMedias);
   }
 
   removeGallery() {
@@ -141,5 +136,7 @@ export class DetailsPage {
     for (let media of this.medias) {
       this.photographerWork.appendChild(media.displayMedia());
     }
+    let lightbox = new Lightbox();
+    lightbox.launchLightbox();
   }
 }

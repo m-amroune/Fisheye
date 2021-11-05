@@ -1,4 +1,5 @@
 import { DetailsPage } from "./DetailsPage.js";
+import { Lightbox } from "./Lightbox.js";
 import { Modal } from "./Modal.js";
 
 async function createDetailsPage() {
@@ -13,6 +14,10 @@ async function createDetailsPage() {
   detailsPage.openDropdown();
   detailsPage.closeDropdown();
   detailsPage.sortBy();
+
+  let lightbox = new Lightbox();
+  lightbox.launchLightbox();
+  lightbox.closeLightbox();
 
   let modal = new Modal();
   modal.launchModal();
