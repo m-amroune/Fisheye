@@ -329,7 +329,7 @@ body {
   display: flex;
   align-items: flex-start;
   position: relative;
-  z-index: 12;
+  z-index: 9;
 }
 .dropdown-sorting button {
   display: flex;
@@ -382,7 +382,7 @@ body {
 .fa-chevron-up {
   color: #fff;
   padding: 0 12px 0 16px;
-  z-index: 10;
+  z-index: 9;
 }
 
 #dropdown-options {

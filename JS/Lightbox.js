@@ -27,35 +27,25 @@ export class Lightbox {
     });
   }
 
-  lightboxMedias() {
-    // this.photographerWorkLink.forEach((elt, index) =>
-    //   elt.addEventListener("click", (e) => {
-    //     this.launchLightbox(index);
-    //     this.currentSlide();
-    //   })
-    // );
-  }
-
   createSlides() {
-    console.log(this.medias[this.position] instanceof ImageFactory);
-    console.log(this.medias[this.position] instanceof VideoFactory);
     if (this.medias[this.position] instanceof ImageFactory) {
-      const imgSlide = document.createElement("img");
-      const titleSlide = document.createElement("p");
-      imgSlide.classList.add("media-work-slide");
-      titleSlide.classList.add("title-work-slide");
-      imgSlide.src = "./public/img/Media/" + this.medias[this.position].url;
-      titleSlide.textContent = `${this.medias[this.position].title}`;
-      this.lightboxContent.append(imgSlide, titleSlide);
+      this.imgSlide = document.createElement("img");
+      this.imgSlide.classList.add("media-work-slide");
+      this.imgSlide.src =
+        "./public/img/Media/" + this.medias[this.position].url;
     } else if (this.medias[this.position] instanceof VideoFactory) {
-      const imgSlide = document.createElement("video");
-      const titleSlide = document.createElement("p");
-      imgSlide.classList.add("media-work-slide");
-      titleSlide.classList.add("title-work-slide");
-      imgSlide.src = "./public/img/Media/" + this.medias[this.position].url;
-      titleSlide.textContent = `${this.medias[this.position].title}`;
-      this.lightboxContent.append(imgSlide, titleSlide);
+      this.imgSlide = document.createElement("video");
+      const videoSource = document.createElement("source");
+      this.imgSlide.classList.add("media-work-slide");
+      videoSource.src = "./public/img/Media/" + this.medias[this.position].url;
+      this.imgSlide.autoplay = false;
+      this.imgSlide.controls = true;
+      this.imgSlide.append(videoSource);
     }
+    const titleSlide = document.createElement("p");
+    titleSlide.classList.add("title-work-slide");
+    titleSlide.textContent = `${this.medias[this.position].title}`;
+    this.lightboxContent.append(this.imgSlide, titleSlide);
   }
 
   displaySlides() {
