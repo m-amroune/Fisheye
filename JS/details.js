@@ -15,9 +15,8 @@ async function createDetailsPage() {
   detailsPage.closeDropdown();
   detailsPage.sortBy();
 
-  let lightbox = new Lightbox();
-  lightbox.launchLightbox();
-  lightbox.closeLightbox();
+  // let lightbox = new Lightbox();
+  // lightbox.lightboxMedias();
 
   let modal = new Modal();
   modal.launchModal();

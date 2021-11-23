@@ -34,7 +34,7 @@
   z-index: 100;
 }
 
-.lightbox-content {
+.lightbox-media {
   & .lightbox-close {
     position: absolute;
     border: none;
@@ -47,7 +47,7 @@
   & .lightbox-close {
     position: absolute;
     right: 30px;
-    top: 10px;
+    top: -100px;
   }
 
   & .lightbox-arrow {
@@ -56,6 +56,7 @@
     transform: translateY(-50%);
     color: #901c1c;
     font-size: 32px;
+    cursor: pointer;
   }
 }
 
@@ -65,4 +66,9 @@
 
 .lightbox-next {
   right: 15px;
+}
+
+.media-work-slide {
+  height: 200px;
+  width: 200px;
 }

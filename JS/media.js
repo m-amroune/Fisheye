@@ -5,10 +5,10 @@ export class MediaFactory {
   }
 }
 
-class ImageFactory {
+export class ImageFactory {
   constructor(props) {
     this.id = props.id;
-    this.src = props.src;
+    this.url = props.url;
     this.title = props.title;
     this.photographerId = props.photographerId;
     this.tags = props.tags;
@@ -37,7 +37,7 @@ class ImageFactory {
     imgInfoLikes.classList.add("photographer-work-elements");
     imgHeart.classList.add("photographer-work-heart");
 
-    imgMedia.src = "./public/img/Media/" + this.src;
+    imgMedia.src = "./public/img/Media/" + this.url;
     imgTitle.textContent = `${this.title}`;
     imgNbrLikes.textContent = `${this.likes}`;
     imgHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true"></i>`;
@@ -53,10 +53,10 @@ class ImageFactory {
   }
 }
 
-class VideoFactory {
+export class VideoFactory {
   constructor(props) {
     this.id = props.id;
-    this.src = props.src;
+    this.url = props.url;
     this.title = props.title;
     this.photographerId = props.photographerId;
     this.tags = props.tags;
@@ -85,7 +85,7 @@ class VideoFactory {
     videoInfoLikes.classList.add("photographer-work-elements");
     videoHeart.classList.add("photographer-work-heart");
 
-    videoMedia.src = "./public/img/Media/" + this.src;
+    videoMedia.src = "./public/img/Media/" + this.url;
     videoTitle.textContent = `${this.title}`;
     videoNbrLikes.textContent = `${this.likes}`;
     videoHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true"></i>`;
