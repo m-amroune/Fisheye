@@ -133,15 +133,27 @@ export class DetailsPage {
     });
   }
 
+  // Counter likes
+
+  totalLikes() {
+    let likeCount = document.querySelector(".total-likes-number");
+    let nbrLikes = 0;
+    let i = 0;
+    for (let i = 0; i < this.medias.length; i++) {
+      nbrLikes += this.medias[i].likes;
+    }
+    likeCount.textContent = nbrLikes;
+  }
+
   // DISPLAY MEDIAS
 
   displayMedias() {
     for (let i = 0; i < this.medias.length; i++) {
       let media = this.medias[i];
       let currentMedia = media.displayMedia();
-      currentMedia.addEventListener("click", () => {
-        this.lightbox.launchLightbox(i);
-      });
+      // currentMedia.addEventListener("click", () => {
+      //   this.lightbox.launchLightbox(i);
+      // });
 
       this.photographerWork.appendChild(currentMedia);
     }
