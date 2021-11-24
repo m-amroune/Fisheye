@@ -42,6 +42,23 @@ export class ImageFactory {
     imgNbrLikes.textContent = `${this.likes}`;
     imgHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true"></i>`;
 
+    let likeCount = document.querySelector(".total-likes-number");
+    let clicked = false;
+    imgHeart.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!clicked) {
+        clicked = true;
+        this.likes++;
+        likeCount.textContent++;
+      } else {
+        clicked = false;
+        this.likes--;
+        likeCount.textContent--;
+      }
+      imgNbrLikes.textContent = `${this.likes}`;
+    });
+
     imgArticle.append(imgFigure);
     imgFigure.append(imgLink, imgFigcaption);
     imgLink.append(imgMedia);
@@ -89,6 +106,23 @@ export class VideoFactory {
     videoTitle.textContent = `${this.title}`;
     videoNbrLikes.textContent = `${this.likes}`;
     videoHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true"></i>`;
+
+    let clicked = false;
+    let likeCount = document.querySelector(".total-likes-number");
+    videoHeart.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!clicked) {
+        clicked = true;
+        this.likes++;
+        likeCount.textContent++;
+      } else {
+        clicked = false;
+        this.likes--;
+        likeCount.textContent--;
+      }
+      videoNbrLikes.textContent = `${this.likes}`;
+    });
 
     videoArticle.append(videoFigure);
     videoFigure.append(videoLink, videoFigcaption);

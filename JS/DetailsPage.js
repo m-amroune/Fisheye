@@ -90,7 +90,6 @@ export class DetailsPage {
       }
     }
     this.lightbox = new Lightbox(this.medias);
-    // this.lightbox.lightboxMedias();
   }
 
   // SORT BY TITLE, DATE AND POPULARITY
@@ -138,7 +137,6 @@ export class DetailsPage {
   totalLikes() {
     let likeCount = document.querySelector(".total-likes-number");
     let nbrLikes = 0;
-    let i = 0;
     for (let i = 0; i < this.medias.length; i++) {
       nbrLikes += this.medias[i].likes;
     }
@@ -151,9 +149,9 @@ export class DetailsPage {
     for (let i = 0; i < this.medias.length; i++) {
       let media = this.medias[i];
       let currentMedia = media.displayMedia();
-      // currentMedia.addEventListener("click", () => {
-      //   this.lightbox.launchLightbox(i);
-      // });
+      currentMedia.addEventListener("click", () => {
+        this.lightbox.launchLightbox(i);
+      });
 
       this.photographerWork.appendChild(currentMedia);
     }
