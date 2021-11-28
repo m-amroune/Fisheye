@@ -32,8 +32,11 @@ export class Photographer {
     listArticle.classList.add("listArticle");
 
     linkPhotographer.href = "../photographer-page.html?id=" + this.id;
-    imgPhotographer.src =
-      "./public/img/Photographers ID Photos/" + this.portrait;
+    linkPhotographer.setAttribute("aria-label", `${this.name}`);
+    imgPhotographer.setAttribute(
+      "src",
+      `./public/img/Photographers ID Photos/${this.portrait}`
+    );
     cardH2.textContent = `${this.name}`;
     detailsPara1.textContent = `${this.city}, ${this.country}`;
     detailsPara2.textContent = `${this.tagline}`;
@@ -53,8 +56,20 @@ export class Photographer {
 
     for (let j = 0; j < this.tags.length; j++) {
       let listItem = document.createElement("li");
+      listItem.classList.add("hashtags-photographers");
       listItem.textContent = "#" + this.tags[j];
       tagsList.appendChild(listItem);
+      listItem.addEventListener("click", () => {
+        let cards = document.querySelectorAll(".cardPhotographer");
+
+        for (let card of cards) {
+          card.style.display = "flex";
+
+          if (!card.textContent.includes(this.tags[j])) {
+            card.style.display = "none";
+          }
+        }
+      });
     }
 
     return listArticle;
@@ -100,8 +115,10 @@ export class Photographer {
       listItem.textContent = "#" + this.tags[j];
       tagsList.appendChild(listItem);
     }
-    imgPhotographer.src =
-      "./public/img/Photographers ID Photos/" + this.portrait;
+    imgPhotographer.setAttribute(
+      "src",
+      `./public/img/Photographers ID Photos/${this.portrait}`
+    );
     imgDiv.appendChild(imgPhotographer);
     return bannerArticle;
   }

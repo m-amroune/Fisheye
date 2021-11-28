@@ -1,8 +1,9 @@
 .photographer-work {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-bottom: -20px;
   figcaption {
     display: flex;
     justify-content: space-between;
@@ -11,7 +12,7 @@
       color: #901c1c;
       font-weight: 400;
       margin-top: 16px;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
 
     & .photographer-work-elements {
@@ -19,17 +20,28 @@
 
       & p {
         color: #901c1c;
+        font-size: 1.5rem;
+        margin-top: 16px;
       }
 
       & span i {
-        padding-top: 20px;
+        padding-top: 19px;
         padding-left: 5px;
         color: #901c1c;
-        font-size: 0.9rem;
+        font-size: 1.5rem;
         cursor: pointer;
       }
     }
   }
+}
+
+.photographer-work-article {
+  margin-right: -40px;
+  margin-bottom: -20px;
+}
+
+.photographer-work-info {
+  margin: 0;
 }
 
 .photographer-work-img {

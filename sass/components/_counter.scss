@@ -4,10 +4,22 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   background-color: #db8876;
-  border-radius: 4px;
-  font-size: 20px;
-  width: 270px;
+  border-radius: 5px;
+  font-size: 24px;
+  width: 376px;
+  height: 89px;
   margin-left: auto;
-  margin-right: -25px;
+  margin-right: -50px;
+
+  & .total-likes {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    & .total-likes-number {
+      padding-right: 0.5rem;
+    }
+  }
 }

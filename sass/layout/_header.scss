@@ -8,22 +8,22 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
 
-  & li {
-    border: 0.5px solid #c4c4c4;
-    border-radius: 11px;
-    font-weight: 500;
-    font-size: 12px;
-    padding: 3px 7px 3px 7px;
-    color: #901c1c;
-    cursor: pointer;
-    margin: 2px;
-    list-style: none;
+.hashtags-photographers {
+  border: 0.5px solid #c4c4c4;
+  border-radius: 11px;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 3px 7px 3px 7px;
+  color: #901c1c;
+  cursor: pointer;
+  margin: 2px;
+  list-style: none;
 
-    &:hover {
-      background-color: #901c1c;
-      color: #fff;
-    }
+  &:hover {
+    background-color: #901c1c;
+    color: #fff;
   }
 }
 

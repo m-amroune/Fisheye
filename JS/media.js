@@ -37,10 +37,11 @@ export class ImageFactory {
     imgInfoLikes.classList.add("photographer-work-elements");
     imgHeart.classList.add("photographer-work-heart");
 
-    imgMedia.src = "./public/img/Media/" + this.url;
+    imgMedia.setAttribute("src", `./public/img/Media/${this.url}`);
+    imgMedia.setAttribute("alt", `./public/img/Media/${this.url}`);
     imgTitle.textContent = `${this.title}`;
     imgNbrLikes.textContent = `${this.likes}`;
-    imgHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true"></i>`;
+    imgHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true" aria-label="likes"></i>`;
 
     let likeCount = document.querySelector(".total-likes-number");
     let clicked = false;
@@ -102,10 +103,11 @@ export class VideoFactory {
     videoInfoLikes.classList.add("photographer-work-elements");
     videoHeart.classList.add("photographer-work-heart");
 
-    videoMedia.src = "./public/img/Media/" + this.url;
+    videoMedia.setAttribute("src", `./public/img/Media/${this.url}`);
+    videoMedia.setAttribute("alt", `./public/img/Media/${this.url}`);
     videoTitle.textContent = `${this.title}`;
     videoNbrLikes.textContent = `${this.likes}`;
-    videoHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true"></i>`;
+    videoHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true" aria-label="likes"></i>`;
 
     let clicked = false;
     let likeCount = document.querySelector(".total-likes-number");

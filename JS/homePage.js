@@ -69,16 +69,13 @@ export class HomePage {
 
     const listHashtags = this.photographersData.map(
       (headerTags) => headerTags.tags
-    ); // conversion in array
-    console.log(listHashtags);
-
+    );
     const listHashtagsSingle = [].concat(...listHashtags); // single array
-    console.log(listHashtagsSingle);
     let HashtagsNotDuplicate = Array.from(new Set(listHashtagsSingle)); // delete duplication
-    console.log(HashtagsNotDuplicate);
 
     for (let j = 0; j < HashtagsNotDuplicate.length; j++) {
       let listItem = document.createElement("li");
+      listItem.classList.add("hashtags-photographers");
       listItem.textContent = listItem[j];
       listItem.innerHTML =
         "<a>" +

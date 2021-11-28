@@ -32,6 +32,9 @@ export class DetailsPage {
       this.sortBy("Title");
       this.displayMedias();
     });
+
+    this.likeCount = document.querySelector(".total-likes-number");
+    this.priceCount = document.querySelector(".price-day");
   }
 
   async fetchPhotographer(id) {
@@ -132,15 +135,15 @@ export class DetailsPage {
     });
   }
 
-  // Counter likes
+  // Counter total likes
 
   totalLikes() {
-    let likeCount = document.querySelector(".total-likes-number");
     let nbrLikes = 0;
     for (let i = 0; i < this.medias.length; i++) {
       nbrLikes += this.medias[i].likes;
     }
-    likeCount.textContent = nbrLikes;
+    this.likeCount.textContent = nbrLikes;
+    this.priceCount.textContent = this.photographer.price + "€ / jour";
   }
 
   // DISPLAY MEDIAS

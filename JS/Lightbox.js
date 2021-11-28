@@ -31,13 +31,18 @@ export class Lightbox {
     if (this.medias[this.position] instanceof ImageFactory) {
       this.imgSlide = document.createElement("img");
       this.imgSlide.classList.add("media-work-slide");
-      this.imgSlide.src =
-        "./public/img/Media/" + this.medias[this.position].url;
+      this.imgSlide.setAttribute(
+        "src",
+        `./public/img/Media/${this.medias[this.position].url}`
+      );
     } else if (this.medias[this.position] instanceof VideoFactory) {
       this.imgSlide = document.createElement("video");
       const videoSource = document.createElement("source");
       this.imgSlide.classList.add("media-work-slide");
-      videoSource.src = "./public/img/Media/" + this.medias[this.position].url;
+      videoSource.setAttribute(
+        "src",
+        `./public/img/Media/${this.medias[this.position].url}`
+      );
       this.imgSlide.autoplay = false;
       this.imgSlide.controls = true;
       this.imgSlide.append(videoSource);
