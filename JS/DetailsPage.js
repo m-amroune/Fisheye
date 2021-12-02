@@ -16,8 +16,18 @@ export class DetailsPage {
     this.title = document.querySelector("#optionTitle");
     this.btnDown = document.querySelector("#btn-down");
     this.btnUp = document.querySelector("#btn-up");
+    this.popularityOption = "Popularité";
+    this.dateOption = "Date";
+    this.titleOption = "Titre";
+
+    this.popularity.textContent = this.popularityOption;
+    this.date.textContent = this.dateOption;
+    this.title.textContent = this.titleOption;
 
     this.date.addEventListener("click", (e) => {
+      this.date.style.order = "1";
+      this.popularity.style.order = "2";
+      this.title.style.order = "3";
       this.removeGallery();
       this.sortBy("Date");
       this.displayMedias();
@@ -26,11 +36,17 @@ export class DetailsPage {
       this.removeGallery();
       this.sortBy("Popularity");
       this.displayMedias();
+      this.popularity.style.order = "1";
+      this.date.style.order = "2";
+      this.title.style.order = "3";
     });
     this.title.addEventListener("click", (e) => {
       this.removeGallery();
       this.sortBy("Title");
       this.displayMedias();
+      this.title.style.order = "1";
+      this.date.style.order = "2";
+      this.popularity.style.order = "3";
     });
 
     this.likeCount = document.querySelector(".total-likes-number");

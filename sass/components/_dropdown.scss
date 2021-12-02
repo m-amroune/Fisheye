@@ -52,12 +52,11 @@
       width: 150px;
       height: 50px;
       color: #fff;
-      &:nth-child(2) {
-        border-bottom: solid 1px #fff;
-        border-top: solid 1px #fff;
-        padding-right: 110px;
-        width: 15px;
-      }
+      border-top: solid 1px #fff;
+      padding-right: 110px;
+      margin-top: -1px;
+      width: 15px;
+
       &:hover {
         color: #000;
       }
@@ -89,4 +88,5 @@
 #btn-up {
   position: absolute;
   left: 90px;
+  padding-bottom: 11px;
 }
