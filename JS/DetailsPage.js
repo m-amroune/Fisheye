@@ -143,11 +143,21 @@ export class DetailsPage {
     this.btnDown.addEventListener("click", () => {
       this.dropdownOptions.style.display = "flex";
     });
+    this.btnDown.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        this.dropdownOptions.style.display = "flex";
+      }
+    });
   }
 
   closeDropdown() {
     this.btnUp.addEventListener("click", () => {
       this.dropdownOptions.style.display = "none";
+    });
+    this.btnUp.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        this.dropdownOptions.style.display = "none";
+      }
     });
   }
 
@@ -170,6 +180,12 @@ export class DetailsPage {
       let currentMedia = media.displayMedia();
       currentMedia.addEventListener("click", () => {
         this.lightbox.launchLightbox(i);
+      });
+
+      currentMedia.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          this.lightbox.launchLightbox(i);
+        }
       });
 
       this.photographerWork.appendChild(currentMedia);

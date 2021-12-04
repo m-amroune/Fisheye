@@ -2,6 +2,7 @@ import { ImageFactory, VideoFactory } from "./Media.js";
 
 export class Lightbox {
   constructor(medias) {
+    this.body = document.querySelector("body");
     this.lightboxBg = document.querySelector("#lightbox-background");
     this.btnClose = document.querySelector("#lightbox-close");
     this.btnPrevious = document.querySelector("#lightbox-previous");
@@ -24,6 +25,21 @@ export class Lightbox {
 
     this.btnClose.addEventListener("click", () => {
       this.closeLightbox();
+      this.btnClose.focus();
+    });
+
+    // keyboard action
+
+    this.lightboxBg.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        this.previousSlide();
+      }
+      if (event.key === "ArrowRight") {
+        this.nextSlide();
+      }
+      if (event.key === " ") {
+        event.preventDefault();
+      }
     });
   }
 
@@ -100,9 +116,11 @@ export class Lightbox {
   openModal() {
     this.lightboxBg.style.display = "flex";
     this.createSlides();
+    this.body.style.overflow = "hidden";
   }
 
   closeLightbox() {
     this.lightboxBg.style.display = "none";
+    this.body.style.overflow = "scroll";
   }
 }

@@ -5,6 +5,5 @@ async function createHomePage() {
   await homePage.fetchPhotographers();
   homePage.displayPhotographers();
   homePage.displayTags();
-  homePage.displayPassContent();
 }
 createHomePage();

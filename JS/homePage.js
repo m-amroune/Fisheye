@@ -7,30 +7,6 @@ export class HomePage {
     this.headerTags = [];
   }
 
-  displayPassContent() {
-    const passContentDiv = document.createElement("div");
-    const passContentLink = document.createElement("a");
-
-    passContentLink.classList.add("passContent");
-    const body = document.querySelector("body");
-    passContentLink.href = "#";
-    passContentLink.textContent = "Passer au contenu";
-    passContentDiv.append(passContentLink);
-    body.append(passContentDiv);
-    const passContent = document.querySelector(".passContent");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        passContent.style.display = "flex";
-      } else if (window.scrollY < 50) {
-        passContent.style.display = "none";
-      } else {
-        passContent.addEventListener("click", () => {
-          passContent.style.display = "none";
-        });
-      }
-    });
-  }
-
   async fetchPhotographers() {
     const res = await fetch("data.json");
     const data = await res.json();
@@ -75,6 +51,7 @@ export class HomePage {
 
     for (let j = 0; j < HashtagsNotDuplicate.length; j++) {
       let listItem = document.createElement("li");
+      listItem.setAttribute("tabindex", "0");
       listItem.classList.add("hashtags-photographers");
       listItem.textContent = listItem[j];
       listItem.innerHTML =
@@ -95,10 +72,47 @@ export class HomePage {
           }
         }
       });
+      listItem.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          let cards = document.querySelectorAll(".cardPhotographer");
+
+          for (let card of cards) {
+            card.style.display = "flex";
+
+            if (!card.textContent.includes(HashtagsNotDuplicate[j])) {
+              card.style.display = "none";
+            }
+          }
+        }
+      });
 
       // appendChild in nav
       navigation.append(tagsListNavigation);
       this.header.appendChild(navigation);
     }
+    // link :  "passer au contenu"
+    const passContentLink = document.createElement("a");
+    passContentLink.classList.add("passContent");
+    passContentLink.href = "#";
+    passContentLink.textContent = "Passer au contenu";
+    navigation.append(passContentLink);
+
+    const passContent = document.querySelector(".passContent");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        passContent.style.display = "flex";
+      } else if (window.scrollY < 50) {
+        passContent.style.display = "none";
+      } else {
+        passContent.addEventListener("click", () => {
+          passContent.style.display = "none";
+        });
+        passContent.addEventListener("keydown", (event) => {
+          if (event.key === "Enter") {
+            passContent.style.display = "none";
+          }
+        });
+      }
+    });
   }
 }

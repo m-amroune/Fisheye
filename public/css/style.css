@@ -11,6 +11,30 @@ body {
   display: flex;
   margin-top: 25px;
   margin-left: 50px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.header nav {
+  display: flex;
+  justify-content: center;
+  margin-right: 310px;
+  width: 100%;
+}
+.header .passContent {
+  position: fixed;
+  color: #000;
+  background-color: #db8876;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 700;
+  font-size: 18px;
+  top: 30px;
+  margin: 5px auto 0 auto;
+  cursor: pointer;
+  display: none;
+  text-decoration: none;
+  z-index: 10;
 }
 
 .tagListNavigation {
@@ -108,9 +132,10 @@ body {
 
 #photographersGallery {
   display: flex;
-  margin: 25px 0 0 0;
   flex-wrap: wrap;
-  align-content: space-between;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 #photographersGallery.cardPhotographer {
   color: #901c1c;
@@ -119,19 +144,12 @@ body {
   top: 10px;
 }
 
-.passContent {
-  position: fixed;
-  color: #000;
-  background-color: #db8876;
-  border-radius: 5px;
-  padding: 5px;
-  font-weight: 700;
-  font-size: 18px;
-  top: 30px;
-  left: 36%;
-  cursor: pointer;
-  display: none;
-  text-decoration: none;
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0;
+  max-width: 1440px;
 }
 
 .main {
@@ -139,8 +157,8 @@ body {
 }
 .main__title {
   position: absolute;
-  right: 250px;
-  top: -105px;
+  right: 10px;
+  top: -80px;
   width: 306px;
   color: #901c1c;
   font-weight: 400;
@@ -221,8 +239,6 @@ body {
   flex-direction: column;
   width: 33%;
   align-items: center;
-  margin-left: -80px;
-  margin-right: 80px;
 }
 .listArticle a {
   text-decoration: none;
@@ -230,6 +246,7 @@ body {
 
 .cardPhotographer {
   text-align: center;
+  min-width: 300px;
 }
 
 .imgPhotographer {
@@ -458,6 +475,7 @@ body {
   left: 50%;
   right: 50%;
   transform: translateX(-50%);
+  align-items: center;
 }
 .lightbox .lightbox-media {
   display: flex;
@@ -467,6 +485,22 @@ body {
   transform: translateY(-50%);
   justify-content: center;
 }
+.lightbox .lightbox-media .lightbox-close {
+  position: absolute;
+  border: none;
+  font-size: 32px;
+  background: none;
+  cursor: pointer;
+  color: #901c1c;
+  right: 30px;
+}
+.lightbox .lightbox-media .lightbox-arrow {
+  position: absolute;
+  color: #901c1c;
+  font-size: 32px;
+  cursor: pointer;
+  top: 50%;
+}
 .lightbox button {
   position: absolute;
   border: none;
@@ -474,6 +508,7 @@ body {
 }
 
 .lightbox-background {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -482,31 +517,9 @@ body {
   background-color: #fff;
   width: auto;
   height: auto;
-  display: none;
   overflow: auto;
   z-index: 100;
-}
-
-.lightbox-media {
-  margin-top: 20px;
-  padding-top: 20px;
-  position: relative;
-}
-.lightbox-media .lightbox-close {
-  position: absolute;
-  border: none;
-  font-size: 32px;
-  background: none;
-  cursor: pointer;
-  color: #901c1c;
-  right: 15px;
-}
-.lightbox-media .lightbox-arrow {
-  bottom: 50%;
-  transform: translateY(-50%);
-  color: #901c1c;
-  font-size: 32px;
-  cursor: pointer;
+  align-items: center;
 }
 
 .lightbox-previous {
@@ -518,8 +531,8 @@ body {
 }
 
 .media-work-slide {
-  max-height: 900px;
-  width: 1050px;
+  max-width: calc(100vw - 1000px);
+  max-height: calc(100vh - 80px);
   border-radius: 5px;
 }
 
