@@ -71,6 +71,7 @@ export class Lightbox {
 
   displaySlides() {
     this.lightboxBg.style.display = "flex";
+    this.btnClose.focus();
     this.removeMedia();
   }
 

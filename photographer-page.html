@@ -37,10 +37,10 @@
                     <span class="chevron fas fa-chevron-down"></span>
                 </button>
                 <div id="dropdown-options">
-                    <ul class="dropdown-sorting-choices">
-                        <li class="dropdown-sorting-choice" id="optionPopularity"></li>
-                        <li class="dropdown-sorting-choice" id="optionDate"></li>
-                        <li class="dropdown-sorting-choice" id="optionTitle"></li>
+                    <ul class="dropdown-sorting-choices" tabindex="0">
+                        <li class="dropdown-sorting-choice" id="optionPopularity" role="option" tabindex="0"></li>
+                        <li class="dropdown-sorting-choice" id="optionDate" role="option" tabindex="0"></li>
+                        <li class="dropdown-sorting-choice" id="optionTitle" role="option" tabindex="0"></li>
                     </ul>
                     <button id="btn-up">
                         <span class="chevron fas fa-chevron-up"></span>
@@ -67,8 +67,7 @@
     <div id="background">
         <div id="form">
             <form id="form-content" action="">
-                <header>
-
+                <header class="header-modal">
                     <h1 class="contact-title">
                         <span>Contactez-moi</span>
                         <span id="ph-name-contact"></span>
@@ -102,17 +101,17 @@
     <!-- Lightbox -->
     <div class="lightbox-background" id="lightbox-background">
         <div class="lightbox" id="ligthbox">
-            <div class="lightbox-media">
+            <div class="lightbox-media" tabindex="0">
                 <div class="lightbox-content" id="lightbox-content">
 
                 </div>
-                <button class="lightbox-close" id="lightbox-close">
+                <button class="lightbox-close" id="lightbox-close" tabindex="0">
                     <span class="fas fa-times"></span>
                 </button>
-                <button class="lightbox-previous lightbox-arrow" id="lightbox-previous">
+                <button class="lightbox-previous lightbox-arrow" id="lightbox-previous" tabindex="0">
                     <span class="fas fa-chevron-left"></span>
                 </button>
-                <button class="lightbox-next lightbox-arrow" id="lightbox-next">
+                <button class="lightbox-next lightbox-arrow" id="lightbox-next" tabindex="0">
                     <span class="fas fa-chevron-right"></span>
                 </button>
 

@@ -24,17 +24,23 @@
   }
 }
 
+// .header-modal {
+//   position: relative;
+// }
+
 #close-btn {
+  position: relative;
   background: none;
   border: none;
+
+  top: -55px;
+  left: 370px;
 
   & span {
     cursor: pointer;
     color: #fff;
     font-size: 36px;
     position: relative;
-    top: -55px;
-    left: 370px;
   }
 }
 

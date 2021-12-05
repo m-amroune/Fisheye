@@ -37,11 +37,13 @@ export class ImageFactory {
     imgInfoLikes.classList.add("photographer-work-elements");
     imgHeart.classList.add("photographer-work-heart");
 
+    imgMedia.setAttribute("tabindex", "0");
     imgMedia.setAttribute("src", `./public/img/Media/${this.url}`);
     imgMedia.setAttribute("alt", `./public/img/Media/${this.url}`);
     imgTitle.textContent = `${this.title}`;
     imgNbrLikes.textContent = `${this.likes}`;
     imgHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true" aria-label="likes"></i>`;
+    imgHeart.setAttribute("tabindex", "0");
 
     let likeCount = document.querySelector(".total-likes-number");
     let clicked = false;
@@ -103,11 +105,13 @@ export class VideoFactory {
     videoInfoLikes.classList.add("photographer-work-elements");
     videoHeart.classList.add("photographer-work-heart");
 
+    videoMedia.setAttribute("tabindex", "0");
     videoMedia.setAttribute("src", `./public/img/Media/${this.url}`);
     videoMedia.setAttribute("alt", `./public/img/Media/${this.url}`);
     videoTitle.textContent = `${this.title}`;
     videoNbrLikes.textContent = `${this.likes}`;
     videoHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true" aria-label="likes"></i>`;
+    videoHeart.setAttribute("tabindex", "0");
 
     let clicked = false;
     let likeCount = document.querySelector(".total-likes-number");

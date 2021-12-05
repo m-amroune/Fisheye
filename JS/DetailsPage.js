@@ -32,6 +32,18 @@ export class DetailsPage {
       this.sortBy("Date");
       this.displayMedias();
     });
+    // keyboard action
+    this.date.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        this.date.style.order = "1";
+        this.popularity.style.order = "2";
+        this.title.style.order = "3";
+        this.removeGallery();
+        this.sortBy("Date");
+        this.displayMedias();
+      }
+    });
+
     this.popularity.addEventListener("click", (e) => {
       this.removeGallery();
       this.sortBy("Popularity");
@@ -40,6 +52,18 @@ export class DetailsPage {
       this.date.style.order = "2";
       this.title.style.order = "3";
     });
+    // keyboard action
+    this.popularity.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        this.removeGallery();
+        this.sortBy("Popularity");
+        this.displayMedias();
+        this.popularity.style.order = "1";
+        this.date.style.order = "2";
+        this.title.style.order = "3";
+      }
+    });
+
     this.title.addEventListener("click", (e) => {
       this.removeGallery();
       this.sortBy("Title");
@@ -47,6 +71,18 @@ export class DetailsPage {
       this.title.style.order = "1";
       this.date.style.order = "2";
       this.popularity.style.order = "3";
+    });
+
+    // keyboard action
+    this.title.addEventListener("click", (e) => {
+      if (event.key === "Enter") {
+        this.removeGallery();
+        this.sortBy("Title");
+        this.displayMedias();
+        this.title.style.order = "1";
+        this.date.style.order = "2";
+        this.popularity.style.order = "3";
+      }
     });
 
     this.likeCount = document.querySelector(".total-likes-number");

@@ -90,16 +90,17 @@ body {
 }
 
 #close-btn {
+  position: relative;
   background: none;
   border: none;
+  top: -55px;
+  left: 370px;
 }
 #close-btn span {
   cursor: pointer;
   color: #fff;
   font-size: 36px;
   position: relative;
-  top: -55px;
-  left: 370px;
 }
 
 .contact-title {

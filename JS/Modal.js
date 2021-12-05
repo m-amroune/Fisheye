@@ -14,14 +14,31 @@ export class Modal {
   launchModal() {
     this.btnContact.addEventListener("click", (e) => {
       this.modalBackground.style.display = "flex";
+      this.modalBackground.setAttribute("tabindex", "0");
+      this.closeBtn.focus();
+      this.closeBtn.focus();
+      this.ElementFocus();
     });
   }
   closeModal() {
     this.closeBtn.addEventListener("click", (e) => {
       this.modalBackground.style.display = "none";
+      this.modalBackground.setAttribute("tabindex", "-1");
+      this.closeBtn.focus();
+      this.ElementFocus();
       e.preventDefault();
     });
   }
+
+  ElementFocus() {
+    this.submitForm.addEventListener("keydown", (event) => {
+      if (event.key === "Tab") {
+        event.preventDefault();
+        this.closeBtn.focus();
+      }
+    });
+  }
+
   submitModal() {
     this.submitForm.addEventListener("click", (e) => {
       this.modalBackground.style.display = "none";
