@@ -28,6 +28,15 @@ export class Modal {
       this.ElementFocus();
       e.preventDefault();
     });
+    this.closeBtn.addEventListener("keydone", (event) => {
+      if (event.key === "Escape") {
+        this.modalBackground.style.display = "none";
+        this.modalBackground.setAttribute("tabindex", "-1");
+        this.closeBtn.focus();
+        this.ElementFocus();
+        e.preventDefault();
+      }
+    });
   }
 
   ElementFocus() {
