@@ -35,7 +35,7 @@ export class Photographer {
     linkPhotographer.setAttribute("aria-label", `${this.name}`);
     imgPhotographer.setAttribute(
       "src",
-      `./public/img/Photographers ID Photos/${this.portrait}`
+      `./assets/img/Photographers ID Photos/${this.portrait}`
     );
     cardH2.textContent = `${this.name}`;
     detailsPara1.textContent = `${this.city}, ${this.country}`;
@@ -117,7 +117,7 @@ export class Photographer {
     }
     imgPhotographer.setAttribute(
       "src",
-      `./public/img/Photographers ID Photos/${this.portrait}`
+      `./assets/img/Photographers ID Photos/${this.portrait}`
     );
     imgDiv.appendChild(imgPhotographer);
     return bannerArticle;

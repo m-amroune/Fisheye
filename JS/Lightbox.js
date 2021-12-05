@@ -27,7 +27,12 @@ export class Lightbox {
       this.closeLightbox();
       this.btnClose.focus();
     });
-
+    this.btnClose.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        this.closeLightbox();
+        this.btnClose.focus();
+      }
+    });
     // keyboard action
 
     this.lightboxBg.addEventListener("keydown", (event) => {
@@ -49,7 +54,7 @@ export class Lightbox {
       this.imgSlide.classList.add("media-work-slide");
       this.imgSlide.setAttribute(
         "src",
-        `./public/img/Media/${this.medias[this.position].url}`
+        `./assets/img/Media/${this.medias[this.position].url}`
       );
     } else if (this.medias[this.position] instanceof VideoFactory) {
       this.imgSlide = document.createElement("video");
@@ -57,7 +62,7 @@ export class Lightbox {
       this.imgSlide.classList.add("media-work-slide");
       videoSource.setAttribute(
         "src",
-        `./public/img/Media/${this.medias[this.position].url}`
+        `./assets/img/Media/${this.medias[this.position].url}`
       );
       this.imgSlide.autoplay = false;
       this.imgSlide.controls = true;
