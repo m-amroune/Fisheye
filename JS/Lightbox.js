@@ -1,4 +1,4 @@
-import { ImageFactory, VideoFactory } from "./Media.js";
+import { ImageFactory, VideoFactory } from "./media.js";
 
 export class Lightbox {
   constructor(medias) {

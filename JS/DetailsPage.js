@@ -1,6 +1,6 @@
-import { Photographer } from "./Photographer.js";
-import { MediaFactory } from "./Media.js";
-import { Lightbox } from "./Lightbox.js";
+import { Photographer } from "./photographer.js";
+import { MediaFactory } from "./media.js";
+import { Lightbox } from "./lightbox.js";
 
 export class DetailsPage {
   constructor() {

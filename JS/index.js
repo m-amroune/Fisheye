@@ -1,4 +1,4 @@
-import { HomePage } from "./HomePage.js";
+import { HomePage } from "./homepage.js";
 
 async function createHomePage() {
   let homePage = new HomePage();

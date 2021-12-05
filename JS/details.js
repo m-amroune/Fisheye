@@ -1,5 +1,5 @@
-import { DetailsPage } from "./DetailsPage.js";
-import { Modal } from "./Modal.js";
+import { DetailsPage } from "./detailsPage.js";
+import { Modal } from "./modal.js";
 
 async function createDetailsPage() {
   const detailsPage = new DetailsPage();
