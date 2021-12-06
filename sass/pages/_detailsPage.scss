@@ -3,55 +3,98 @@
   display: flex;
   margin-left: 50px;
   margin-top: 25px;
-  width: 1400px;
+  margin-right: 10px;
   background-color: #fafafa;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
 
+  @media (max-width: 1200px) {
+    background-color: #fff;
+  }
+
+  @media (max-width: 800px) {
+    margin-left: 5px;
+    margin-top: -10px;
+  }
+
   .PicturePhotographer {
     margin-right: 40px;
   }
+}
 
-  & .imgPhotographerProfile {
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
-    object-fit: cover;
+.imgPhotographerProfile {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  object-fit: cover;
+
+  @media (max-width: 800px) {
+    width: 150px;
+    height: 150px;
   }
-  & .infoPhotographer {
-    margin-left: 40px;
+  @media (max-width: 600px) {
+    width: 100px;
+    height: 100px;
+  }
+}
 
-    & h1 {
-      color: #d3573c;
-      font-size: 64px;
-      font-weight: 400;
-      margin-bottom: 0;
-    }
+.infoPhotographer {
+  margin-left: 40px;
 
-    & .citationPhotographerProfile {
-      font-size: 18px;
-    }
+  & h1 {
+    color: #d3573c;
+    font-size: 64px;
+    font-weight: 400;
+    margin-bottom: 0;
 
-    & .localisationPhotographerProfile {
-      color: #901c1c;
-      font-size: 24px;
+    @media (max-width: 800px) {
+      font-size: 32px;
     }
   }
 
-  .tagsListProfile {
-    list-style-type: none;
-    display: flex;
-    margin-left: -42px;
+  & .citationPhotographerProfile {
+    font-size: 18px;
+    margin-top: -10px;
+    color: #525252;
 
-    & li {
-      border: 0.5px solid #c4c4c4;
-      border-radius: 11px;
-      padding: 3px 7px 3px 7px;
-      color: #901c1c;
-      font-weight: 500;
-      font-size: 24px;
-      margin: 5px;
+    @media (max-width: 800px) {
+      font-size: 16px;
+      margin-top: -25px;
+    }
+  }
+
+  & .localisationPhotographerProfile {
+    color: #901c1c;
+    font-size: 24px;
+
+    @media (max-width: 800px) {
+      margin-top: -5px;
+    }
+  }
+}
+
+.tagsListProfile {
+  list-style-type: none;
+  display: flex;
+  margin-left: -42px;
+
+  @media (max-width: 800px) {
+    margin-top: -5px;
+  }
+
+  & li {
+    border: 0.5px solid #c4c4c4;
+    border-radius: 11px;
+    padding: 3px 7px 3px 7px;
+    color: #901c1c;
+    font-weight: 500;
+    font-size: 24px;
+    margin: 5px;
+    margin-top: -5px;
+
+    @media (max-width: 800px) {
+      font-size: 12px;
     }
   }
 }
@@ -72,5 +115,19 @@
   &:hover {
     background-color: #d3573c;
     color: #000;
+  }
+
+  @media (max-width: 1100px) {
+    width: 170px;
+    height: 35px;
+    border-radius: 5px;
+    position: fixed;
+    left: 50%;
+    right: 50%;
+    top: 300px;
+    transform: translateX(-50%);
+  }
+  @media (max-width: 800px) {
+    top: 650px;
   }
 }

@@ -41,6 +41,12 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  color: green;
+}
+@media (max-width: 1250px) {
+  .tagListNavigation {
+    margin-top: 50px;
+  }
 }
 
 .hashtags-photographers {

@@ -5,11 +5,37 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  & nav {
+
+  @media (max-width: 1250px) {
+    display: inline;
+  }
+
+  & img {
+    @media (max-width: 800px) {
+      width: 100px;
+    }
+  }
+
+  & .navigation {
     display: flex;
     justify-content: center;
     margin-right: 310px;
     width: 100%;
+
+    @media (max-width: 1250px) {
+      margin-right: 0;
+      padding-top: 40px;
+      width: 80%;
+    }
+  }
+
+  .tagListNavigation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (max-width: 1250px) {
+    }
   }
 
   .passContent {
@@ -27,12 +53,6 @@
     text-decoration: none;
     z-index: 10;
   }
-}
-
-.tagListNavigation {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 .hashtags-photographers {

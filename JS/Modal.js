@@ -9,32 +9,32 @@ export class Modal {
     this.lastName = document.querySelector("#last-name");
     this.email = document.querySelector("#email");
     this.message = document.querySelector("#message");
+    this.userContent = document.querySelectorAll(".user-content");
   }
 
   launchModal() {
     this.btnContact.addEventListener("click", (e) => {
       this.modalBackground.style.display = "flex";
+      this.modalBackground.style.order = "-1";
       this.modalBackground.setAttribute("tabindex", "0");
-      this.closeBtn.focus();
-      this.closeBtn.focus();
-      this.ElementFocus();
-    });
-  }
-  closeModal() {
-    this.closeBtn.addEventListener("click", (e) => {
-      this.modalBackground.style.display = "none";
-      this.modalBackground.setAttribute("tabindex", "-1");
       this.closeBtn.focus();
       this.ElementFocus();
       e.preventDefault();
     });
-    this.closeBtn.addEventListener("keydone", (event) => {
+  }
+  closeModal() {
+    this.closeBtn.addEventListener("click", (event) => {
+      this.modalBackground.style.display = "none";
+      this.modalBackground.setAttribute("tabindex", "-1");
+      this.btnContact.focus();
+      event.preventDefault();
+    });
+    this.closeBtn.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         this.modalBackground.style.display = "none";
         this.modalBackground.setAttribute("tabindex", "-1");
-        this.closeBtn.focus();
-        this.ElementFocus();
-        e.preventDefault();
+        this.btnContact.focus();
+        event.preventDefault();
       }
     });
   }
@@ -51,11 +51,11 @@ export class Modal {
   submitModal() {
     this.submitForm.addEventListener("click", (e) => {
       this.modalBackground.style.display = "none";
+      this.closeBtn.focus();
       console.log("Prénom : " + this.firstName.value);
       console.log("Nom : " + this.lastName.value);
       console.log("Email : " + this.email.value);
       console.log("Message : " + this.message.value);
-      e.preventDefault();
     });
   }
 }

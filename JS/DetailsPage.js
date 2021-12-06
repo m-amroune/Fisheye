@@ -220,6 +220,7 @@ export class DetailsPage {
 
       currentMedia.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
+          event.preventDefault();
           this.lightbox.launchLightbox(i);
         }
       });

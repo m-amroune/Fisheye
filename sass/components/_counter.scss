@@ -13,6 +13,10 @@
   margin-left: auto;
   margin-right: -50px;
 
+  @media (max-width: 900px) {
+    visibility: hidden;
+  }
+
   & .total-likes {
     display: flex;
     align-items: baseline;

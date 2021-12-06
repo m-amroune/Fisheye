@@ -10,6 +10,11 @@
   margin: 0 auto;
   top: 10%;
   left: 15%;
+
+  @media (max-width: 600px) {
+    width: none;
+    left: 5%;
+  }
 }
 
 #form-content {
@@ -23,10 +28,6 @@
     border-radius: 5px;
   }
 }
-
-// .header-modal {
-//   position: relative;
-// }
 
 #close-btn {
   position: relative;

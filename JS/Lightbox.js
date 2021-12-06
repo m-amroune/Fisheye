@@ -17,20 +17,20 @@ export class Lightbox {
     console.log(this.medias);
     this.btnPrevious.addEventListener("click", () => {
       this.previousSlide();
+      this.btnClose.focus();
     });
 
     this.btnNext.addEventListener("click", () => {
       this.nextSlide();
+      this.btnClose.focus();
     });
 
     this.btnClose.addEventListener("click", () => {
       this.closeLightbox();
-      this.btnClose.focus();
     });
     this.btnClose.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         this.closeLightbox();
-        this.btnClose.focus();
       }
     });
     // keyboard action

@@ -6,6 +6,10 @@
   font-size: 17px;
   margin-left: 50px;
 
+  @media (max-width: 800px) {
+    visibility: hidden;
+  }
+
   & label {
     padding-right: 32px;
     font-weight: bold;
