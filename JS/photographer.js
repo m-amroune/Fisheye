@@ -116,16 +116,16 @@ export class Photographer {
       listItem.textContent = "#" + this.tags[j];
       tagsList.appendChild(listItem);
 
-      listItem.addEventListener("click", () => {
-        let cards = document.querySelectorAll(".cardPhotographer");
-        console.log(cards);
-        for (let card of cards) {
-          card.style.display = "flex";
-          if (!card.textContent.includes(this.tags[j])) {
-            card.style.display = "none";
-          }
-        }
-      });
+      // listItem.addEventListener("click", () => {
+      //   let cards = document.querySelectorAll(".cardPhotographer");
+      //   console.log(cards);
+      //   for (let card of cards) {
+      //     card.style.display = "flex";
+      //     if (!card.textContent.includes(this.tags[j])) {
+      //       card.style.display = "none";
+      //     }
+      //   }
+      // });
     }
 
     imgPhotographer.setAttribute(
