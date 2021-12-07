@@ -74,7 +74,7 @@ export class DetailsPage {
     });
 
     // keyboard action
-    this.title.addEventListener("click", (e) => {
+    this.title.addEventListener("click", (event) => {
       if (event.key === "Enter") {
         this.removeGallery();
         this.sortBy("Title");

@@ -63,7 +63,6 @@ export class HomePage {
       tagsListNavigation.appendChild(listItem);
       listItem.addEventListener("click", () => {
         let cards = document.querySelectorAll(".cardPhotographer");
-
         for (let card of cards) {
           card.style.display = "flex";
 
