@@ -38,8 +38,8 @@ export class ImageFactory {
     imgHeart.classList.add("photographer-work-heart");
 
     imgMedia.setAttribute("tabindex", "0");
-    imgMedia.setAttribute("src", `./assets/img/Media/${this.url}`);
-    imgMedia.setAttribute("alt", `./assets/img/Media/${this.url}`);
+    imgMedia.setAttribute("src", `./assets/img/media/${this.url}`);
+    imgMedia.setAttribute("alt", `./assets/img/media/${this.url}`);
     imgTitle.textContent = `${this.title}`;
     imgNbrLikes.textContent = `${this.likes}`;
     imgHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true" aria-label="likes"></i>`;
@@ -106,8 +106,8 @@ export class VideoFactory {
     videoHeart.classList.add("photographer-work-heart");
 
     videoMedia.setAttribute("tabindex", "0");
-    videoMedia.setAttribute("src", `./assets/img/Media/${this.url}`);
-    videoMedia.setAttribute("alt", `./assets/img/Media/${this.url}`);
+    videoMedia.setAttribute("src", `./assets/img/media/${this.url}`);
+    videoMedia.setAttribute("alt", `./assets/img/media/${this.url}`);
     videoTitle.textContent = `${this.title}`;
     videoNbrLikes.textContent = `${this.likes}`;
     videoHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true" aria-label="likes"></i>`;
