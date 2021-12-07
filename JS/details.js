@@ -1,4 +1,4 @@
-import { DetailsPage } from "./detailsPage.js";
+import { DetailsPage } from "./detailspage.js";
 import { Modal } from "./modal.js";
 
 async function createDetailsPage() {
