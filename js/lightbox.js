@@ -54,7 +54,7 @@ export class Lightbox {
       this.imgSlide.classList.add("media-work-slide");
       this.imgSlide.setAttribute(
         "src",
-        `./assets/img/Media/${this.medias[this.position].url}`
+        `./assets/img/media/${this.medias[this.position].url}`
       );
     } else if (this.medias[this.position] instanceof VideoFactory) {
       this.imgSlide = document.createElement("video");
@@ -62,7 +62,7 @@ export class Lightbox {
       this.imgSlide.classList.add("media-work-slide");
       videoSource.setAttribute(
         "src",
-        `./assets/img/Media/${this.medias[this.position].url}`
+        `./assets/img/media/${this.medias[this.position].url}`
       );
       this.imgSlide.autoplay = false;
       this.imgSlide.controls = true;
