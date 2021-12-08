@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta "Content-Security-Policy"
-        content="default-src 'self' '; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' img-src 'self' 'unsafe-inline' 'unsafe-eval';">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="img/png" href="./assets/img/logo.png" />
 
@@ -18,7 +17,7 @@
 <body>
     <header class="photographer-header">
 
-        <a href="index.html">
+        <a href="index.html" tabindex="0">
             <img class="header-logo" src="./assets/img/logo.png" alt="Fisheye Home page">
         </a>
 
@@ -35,7 +34,7 @@
         <div class="dropdown">
             <label class="sort-by">Trier par</label>
             <div class="dropdown-sorting">
-                <button id="btn-down">
+                <button id="btn-down" role="button">
                     <span id="dropdown-filter">Popularité</span>
                     <span class="chevron fas fa-chevron-down"></span>
                 </button>
@@ -45,7 +44,7 @@
                         <li class="dropdown-sorting-choice" id="optionDate" role="option" tabindex="0"></li>
                         <li class="dropdown-sorting-choice" id="optionTitle" role="option" tabindex="0"></li>
                     </ul>
-                    <button id="btn-up">
+                    <button id="btn-up" role="button">
                         <span class="chevron fas fa-chevron-up"></span>
                     </button>
                 </div>
@@ -68,8 +67,8 @@
     <!--Modal -->
 
     <div id="background">
-        <div id="form">
-            <form id="form-content" action="">
+        <div id="form" role="dialog">
+            <form id="form-content" action="" aria-label="formulaire de contact">
                 <header class="header-modal">
                     <h1 class="contact-title">
                         <span>Contactez-moi</span>
@@ -81,19 +80,19 @@
                 </header>
 
                 <div class="form-data">
-                    <label for="first-name">Prénom</label>
-                    <input id="first-name" class="user-content" type="text">
+                    <label for="first-name" aria-label="Prénom">Prénom</label>
+                    <input id="first-name" type="text">
                 </div>
                 <div class="form-data">
-                    <label for="last-name">Nom</label>
-                    <input id="last-name" class="user-content" type="text">
+                    <label for="last-name" aria-label="Nom">Nom</label>
+                    <input id="last-name" type="text">
                 </div>
                 <div class="form-data">
-                    <label for="email">Email</label>
-                    <input id="email" class="user-content" type="email">
+                    <label for="email" aria-label="Email">Email</label>
+                    <input id="email" type="email">
                 </div>
                 <div class="form-data">
-                    <label for="message">Votre message</label>
+                    <label for="message" aria-label="Votre message">Votre message</label>
                     <textarea name="" class="user-content" id="message" cols="30" rows="10"></textarea>
                 </div>
                 <input class="form-submit" type="submit">
@@ -104,7 +103,7 @@
     <!-- Lightbox -->
     <div class="lightbox-background" id="lightbox-background">
         <div class="lightbox" id="ligthbox">
-            <div class="lightbox-media" tabindex="0">
+            <div class="lightbox-media" aria-label="lightbox, média en gros plan" tabindex="0">
                 <div class="lightbox-content" id="lightbox-content">
 
                 </div>

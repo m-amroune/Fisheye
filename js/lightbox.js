@@ -17,12 +17,24 @@ export class Lightbox {
     console.log(this.medias);
     this.btnPrevious.addEventListener("click", () => {
       this.previousSlide();
-      this.btnClose.focus();
+    });
+    this.btnPrevious.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        this.closeLightbox();
+      }
     });
 
     this.btnNext.addEventListener("click", () => {
       this.nextSlide();
-      this.btnClose.focus();
+    });
+    this.btnNext.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        this.closeLightbox();
+      }
+      if (event.key === "Tab") {
+        event.preventDefault();
+        this.btnClose.focus();
+      }
     });
 
     this.btnClose.addEventListener("click", () => {
@@ -81,8 +93,6 @@ export class Lightbox {
   }
 
   launchLightbox(index) {
-    // console.log(index);
-    // console.log(this.medias[index]);
     this.openModal();
     this.position = index;
     this.currentSlide(this.position);
@@ -123,6 +133,7 @@ export class Lightbox {
     this.lightboxBg.style.display = "flex";
     this.createSlides();
     this.body.style.overflow = "hidden";
+    this.btnClose.focus();
   }
 
   closeLightbox() {

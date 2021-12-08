@@ -11,6 +11,7 @@ export class DetailsPage {
     this.photographerWork = document.querySelector(".photographer-work");
     this.lightboxContent = document.querySelector("#lightbox-content");
     this.dropdownOptions = document.querySelector("#dropdown-options");
+    this.btnClose = document.querySelector("#lightbox-close");
     this.popularity = document.querySelector("#optionPopularity");
     this.date = document.querySelector("#optionDate");
     this.title = document.querySelector("#optionTitle");
