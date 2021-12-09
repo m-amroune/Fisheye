@@ -33,6 +33,7 @@ export class Photographer {
 
     linkPhotographer.href = "../photographer-page.html?id=" + this.id;
     linkPhotographer.setAttribute("aria-label", `${this.name}`);
+    linkPhotographer.setAttribute("alt", " ");
     imgPhotographer.setAttribute(
       "src",
       `./assets/img/Photographers ID Photos/${this.portrait}`
@@ -57,8 +58,14 @@ export class Photographer {
     for (let j = 0; j < this.tags.length; j++) {
       let listItem = document.createElement("li");
       listItem.classList.add("hashtags-photographers");
-      listItem.textContent = "#" + this.tags[j];
+      listItem.innerHTML =
+        "<a>" +
+        "#" +
+        this.tags[j] +
+        '<span class="sr-only">' + // only for screen readers
+        "</a>";
       listItem.setAttribute("tabindex", "0");
+      listItem.setAttribute("aria-label", "trier par " + this.tags[j]);
       tagsList.appendChild(listItem);
 
       listItem.addEventListener("click", () => {
@@ -100,13 +107,17 @@ export class Photographer {
     imgPhotographer.classList.add("imgPhotographerProfile");
 
     nameH1.textContent = `${this.name}`;
+    nameH1.setAttribute("aria-label", `${this.name}`);
+    contactBtn.setAttribute("aria-label", "Contact Me");
     localisation.textContent = `${this.city}, ${this.country}`;
     citation.textContent = `${this.tagline}`;
+    imgPhotographer.setAttribute("alt", " ");
 
     contactBtn.textContent = "Contactez-moi";
 
     // Name photographer for contact form
     this.photographerName.innerHTML = "<br>" + this.name;
+    this.photographerName.setAttribute("aria-label", `${this.name}`);
 
     bannerArticle.append(infoDiv, contactBtn, imgDiv);
     infoDiv.append(nameH1, localisation, citation, tagsList);

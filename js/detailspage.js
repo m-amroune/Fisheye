@@ -75,7 +75,7 @@ export class DetailsPage {
     });
 
     // keyboard action
-    this.title.addEventListener("click", (event) => {
+    this.title.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
         this.removeGallery();
         this.sortBy("Title");
@@ -129,6 +129,7 @@ export class DetailsPage {
           likes: media.likes,
           date: media.date,
           price: media.price,
+          alt: media.alt,
         });
         this.medias.push(image);
       } else if (media.photographerId === id && media.image === undefined) {
@@ -141,6 +142,7 @@ export class DetailsPage {
           likes: media.likes,
           date: media.date,
           price: media.price,
+          alt: media.alt,
         });
         this.medias.push(video);
       }
@@ -179,10 +181,12 @@ export class DetailsPage {
   openDropdown() {
     this.btnDown.addEventListener("click", () => {
       this.dropdownOptions.style.display = "flex";
+      this.btnDown.setAttribute("aria-expanded", "true");
     });
     this.btnDown.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
         this.dropdownOptions.style.display = "flex";
+        this.btnDown.setAttribute("aria-expanded", "true");
       }
     });
   }

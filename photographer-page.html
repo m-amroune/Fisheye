@@ -17,7 +17,7 @@
 <body>
     <header class="photographer-header">
 
-        <a href="index.html" tabindex="0">
+        <a href="index.html" role="link" tabindex="0">
             <img class="header-logo" src="./assets/img/logo.png" alt="Fisheye Home page">
         </a>
 
@@ -34,17 +34,21 @@
         <div class="dropdown">
             <label class="sort-by">Trier par</label>
             <div class="dropdown-sorting">
-                <button id="btn-down" role="button">
+                <button id="btn-down" role="button" role="listbox" aria-haspopup="listbox" aria-label="trier par filtre"
+                    aria-expanded="false">
                     <span id="dropdown-filter">Popularité</span>
                     <span class="chevron fas fa-chevron-down"></span>
                 </button>
                 <div id="dropdown-options">
-                    <ul class="dropdown-sorting-choices" tabindex="0">
-                        <li class="dropdown-sorting-choice" id="optionPopularity" role="option" tabindex="0"></li>
-                        <li class="dropdown-sorting-choice" id="optionDate" role="option" tabindex="0"></li>
-                        <li class="dropdown-sorting-choice" id="optionTitle" role="option" tabindex="0"></li>
+                    <ul id="dropdown-sorting-choices" role="listbox" aria-haspopup="listbox" tabindex="0">
+                        <li class="dropdown-sorting-choice" aria-label="trier par popularité" id="optionPopularity"
+                            role="option" tabindex="0"></li>
+                        <li class="dropdown-sorting-choice" aria-label="trier par date" id="optionDate" role="option"
+                            tabindex="0"></li>
+                        <li class="dropdown-sorting-choice" aria-label="trier par titre" id="optionTitle" role="option"
+                            tabindex="0"></li>
                     </ul>
-                    <button id="btn-up" role="button">
+                    <button id="btn-up" role="button" aria-label="close dropdown">
                         <span class="chevron fas fa-chevron-up"></span>
                     </button>
                 </div>
@@ -68,52 +72,53 @@
 
     <div id="background">
         <div id="form" role="dialog">
-            <form id="form-content" action="" aria-label="formulaire de contact">
+            <form id="form-content" action="" aria-label="form" aria-labelledby="contact-title">
                 <header class="header-modal">
-                    <h1 class="contact-title">
+                    <h1 id="contact-title">
                         <span>Contactez-moi</span>
                         <span id="ph-name-contact"></span>
                     </h1>
-                    <button id="close-btn">
+                    <button id="close-btn" aria-label="Close Contact form">
                         <span class="fas fa-times close-form-icon"></span>
                     </button>
                 </header>
 
                 <div class="form-data">
-                    <label for="first-name" aria-label="Prénom">Prénom</label>
-                    <input id="first-name" type="text">
+                    <label for="first-name" aria-label="First name" aria-labelledby="first-name">Prénom</label>
+                    <input id="first-name" class="user-content" type="text">
                 </div>
                 <div class="form-data">
-                    <label for="last-name" aria-label="Nom">Nom</label>
-                    <input id="last-name" type="text">
+                    <label for="last-name" aria-label="Name" aria-labelledby="last-name">Nom</label>
+                    <input id="last-name" class="user-content" type="text">
                 </div>
                 <div class="form-data">
-                    <label for="email" aria-label="Email">Email</label>
-                    <input id="email" type="email">
+                    <label for="email" aria-label="Email" aria-labelledby="email">Email</label>
+                    <input id="email" class="user-content" type="email">
                 </div>
                 <div class="form-data">
-                    <label for="message" aria-label="Votre message">Votre message</label>
-                    <textarea name="" class="user-content" id="message" cols="30" rows="10"></textarea>
+                    <label for="message" aria-label="Your message" aria-labelledby="message">Votre message</label>
+                    <textarea id="message" name="" class="user-content" id="message" cols="30" rows="10"></textarea>
                 </div>
-                <input class="form-submit" type="submit">
+                <input class="form-submit" aria-label="Send" role="button" type="submit">
             </form>
         </div>
     </div>
 
     <!-- Lightbox -->
     <div class="lightbox-background" id="lightbox-background">
-        <div class="lightbox" id="ligthbox">
-            <div class="lightbox-media" aria-label="lightbox, média en gros plan" tabindex="0">
+        <div class="lightbox" id="ligthbox" role="dialog" aria-label="image closeup view" tabindex="0">
+            <div class="lightbox-media">
                 <div class="lightbox-content" id="lightbox-content">
 
                 </div>
-                <button class="lightbox-close" id="lightbox-close" tabindex="0">
+                <button class="lightbox-close" id="lightbox-close" aria-label="Close dialog" tabindex="0">
                     <span class="fas fa-times"></span>
                 </button>
-                <button class="lightbox-previous lightbox-arrow" id="lightbox-previous" tabindex="0">
+                <button class="lightbox-previous lightbox-arrow" id="lightbox-previous" aria-label="Previous image"
+                    tabindex="0">
                     <span class="fas fa-chevron-left"></span>
                 </button>
-                <button class="lightbox-next lightbox-arrow" id="lightbox-next" tabindex="0">
+                <button class="lightbox-next lightbox-arrow" id="lightbox-next" aria-label="Next image" tabindex="0">
                     <span class="fas fa-chevron-right"></span>
                 </button>
 

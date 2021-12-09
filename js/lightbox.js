@@ -68,6 +68,7 @@ export class Lightbox {
         "src",
         `./assets/img/media/${this.medias[this.position].url}`
       );
+      this.imgSlide.setAttribute("alt", this.medias[this.position].title);
     } else if (this.medias[this.position] instanceof VideoFactory) {
       this.imgSlide = document.createElement("video");
       const videoSource = document.createElement("source");
@@ -76,6 +77,7 @@ export class Lightbox {
         "src",
         `./assets/img/media/${this.medias[this.position].url}`
       );
+      videoSource.setAttribute("alt", this.medias[this.position].title);
       this.imgSlide.autoplay = false;
       this.imgSlide.controls = true;
       this.imgSlide.append(videoSource);

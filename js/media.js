@@ -15,6 +15,7 @@ export class ImageFactory {
     this.likes = props.likes;
     this.date = props.date;
     this.price = props.price;
+    this.alt = props.alt;
   }
   displayMedia() {
     const imgArticle = document.createElement("article");
@@ -38,18 +39,20 @@ export class ImageFactory {
     imgHeart.classList.add("photographer-work-heart");
 
     imgMedia.setAttribute("tabindex", "0");
+    imgMedia.setAttribute("aria-label", this.title + ", closeup view");
     imgMedia.setAttribute("src", `./assets/img/media/${this.url}`);
-    // imgMedia.setAttribute("alt", `./assets/img/media/${this.url}`);
+    imgMedia.setAttribute("alt", this.alt);
     imgTitle.textContent = `${this.title}`;
     imgNbrLikes.textContent = `${this.likes}`;
     imgHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true" aria-label="likes"></i>`;
     imgHeart.setAttribute("tabindex", "0");
+    imgHeart.setAttribute("alt", "likes");
 
     let likeCount = document.querySelector(".total-likes-number");
     let clicked = false;
-    imgHeart.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
+    imgHeart.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
       if (!clicked) {
         clicked = true;
         this.likes++;
@@ -60,6 +63,22 @@ export class ImageFactory {
         likeCount.textContent--;
       }
       imgNbrLikes.textContent = `${this.likes}`;
+    });
+    imgHeart.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        event.stopPropagation();
+        if (!clicked) {
+          clicked = true;
+          this.likes++;
+          likeCount.textContent++;
+        } else {
+          clicked = false;
+          this.likes--;
+          likeCount.textContent--;
+        }
+        imgNbrLikes.textContent = `${this.likes}`;
+      }
     });
 
     imgArticle.append(imgFigure);
@@ -83,6 +102,7 @@ export class VideoFactory {
     this.likes = props.likes;
     this.date = props.date;
     this.price = props.price;
+    this.alt = props.alt;
   }
   displayMedia() {
     const videoArticle = document.createElement("article");
@@ -106,18 +126,19 @@ export class VideoFactory {
     videoHeart.classList.add("photographer-work-heart");
 
     videoMedia.setAttribute("tabindex", "0");
+    videoMedia.setAttribute("aria-label", this.title + ", closeup view");
     videoMedia.setAttribute("src", `./assets/img/media/${this.url}`);
-    // videoMedia.setAttribute("alt", `./assets/img/media/${this.url}`);
+    videoMedia.setAttribute("alt", this.alt);
     videoTitle.textContent = `${this.title}`;
     videoNbrLikes.textContent = `${this.likes}`;
     videoHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true" aria-label="likes"></i>`;
     videoHeart.setAttribute("tabindex", "0");
-
+    videoHeart.setAttribute("alt", "likes");
     let clicked = false;
     let likeCount = document.querySelector(".total-likes-number");
-    videoHeart.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
+    videoHeart.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
       if (!clicked) {
         clicked = true;
         this.likes++;
@@ -128,6 +149,22 @@ export class VideoFactory {
         likeCount.textContent--;
       }
       videoNbrLikes.textContent = `${this.likes}`;
+    });
+    videoHeart.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        event.stopPropagation();
+        if (!clicked) {
+          clicked = true;
+          this.likes++;
+          likeCount.textContent++;
+        } else {
+          clicked = false;
+          this.likes--;
+          likeCount.textContent--;
+        }
+        videoNbrLikes.textContent = `${this.likes}`;
+      }
     });
 
     videoArticle.append(videoFigure);

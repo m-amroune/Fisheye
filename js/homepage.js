@@ -58,9 +58,15 @@ export class HomePage {
         "<a>" +
         "#" +
         HashtagsNotDuplicate[j].charAt(0).toUpperCase() +
-        HashtagsNotDuplicate[j].slice(1);
-      +"</a>";
-      tagsListNavigation.appendChild(listItem);
+        HashtagsNotDuplicate[j].slice(1) +
+        '<span class="sr-only">'; // only for screen readers
+      ("</span>");
+      ("</a>");
+      listItem.setAttribute(
+        "aria-label",
+        "trier par " + HashtagsNotDuplicate[j]
+      );
+      tagsListNavigation.append(listItem);
       listItem.addEventListener("click", () => {
         let cards = document.querySelectorAll(".cardPhotographer");
         for (let card of cards) {
