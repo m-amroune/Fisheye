@@ -1,6 +1,8 @@
 import { DetailsPage } from "./detailspage.js";
 import { Modal } from "./modal.js";
 
+// function that allows display photographers page
+
 async function createDetailsPage() {
   const detailsPage = new DetailsPage();
   const urlParams = new URLSearchParams(window.location.search);

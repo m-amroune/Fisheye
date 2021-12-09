@@ -25,6 +25,7 @@ export class DetailsPage {
     this.date.textContent = this.dateOption;
     this.title.textContent = this.titleOption;
 
+    //---------------------------------- EVENTS  DROPDOWN ---------------------------//
     this.date.addEventListener("click", (e) => {
       this.date.style.order = "1";
       this.popularity.style.order = "2";
@@ -33,7 +34,29 @@ export class DetailsPage {
       this.sortBy("Date");
       this.displayMedias();
     });
-    // keyboard action
+
+    this.popularity.addEventListener("click", (e) => {
+      this.removeGallery();
+      this.sortBy("Popularity");
+      this.displayMedias();
+      this.popularity.style.order = "1";
+      this.date.style.order = "2";
+      this.title.style.order = "3";
+    });
+
+    this.title.addEventListener("click", (e) => {
+      this.removeGallery();
+      this.sortBy("Title");
+      this.displayMedias();
+      this.title.style.order = "1";
+      this.date.style.order = "2";
+      this.popularity.style.order = "3";
+    });
+
+    //-------------------------- KEYBOARD ACTION ---------------------------------//
+
+    // by date
+
     this.date.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
         this.date.style.order = "1";
@@ -48,15 +71,8 @@ export class DetailsPage {
       }
     });
 
-    this.popularity.addEventListener("click", (e) => {
-      this.removeGallery();
-      this.sortBy("Popularity");
-      this.displayMedias();
-      this.popularity.style.order = "1";
-      this.date.style.order = "2";
-      this.title.style.order = "3";
-    });
-    // keyboard action
+    // by popularity
+
     this.popularity.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
         this.removeGallery();
@@ -71,16 +87,7 @@ export class DetailsPage {
       }
     });
 
-    this.title.addEventListener("click", (e) => {
-      this.removeGallery();
-      this.sortBy("Title");
-      this.displayMedias();
-      this.title.style.order = "1";
-      this.date.style.order = "2";
-      this.popularity.style.order = "3";
-    });
-
-    // keyboard action
+    // by title
     this.title.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
         this.removeGallery();
@@ -99,6 +106,7 @@ export class DetailsPage {
     this.priceCount = document.querySelector(".price-day");
   }
 
+  // asynchrone function that recover photographers json file
   async fetchPhotographer(id) {
     const res = await fetch("data.json");
     const data = await res.json();
@@ -123,6 +131,7 @@ export class DetailsPage {
     this.banner.appendChild(this.photographer.displayDetails());
   }
 
+  //  asynchrone function that recover medias json file
   async fetchMedia(id) {
     const res = await fetch("data.json");
     const data = await res.json();
@@ -232,6 +241,7 @@ export class DetailsPage {
       let media = this.medias[i];
       let currentMedia = media.displayMedia();
       currentMedia.addEventListener("click", () => {
+        // LAUNCH LIGHTBOX
         this.lightbox.launchLightbox(i);
       });
 

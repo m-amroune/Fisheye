@@ -15,18 +15,29 @@ export class Lightbox {
     this.medias = medias;
     this.imgSlide = "";
     console.log(this.medias);
+
+    //---------------- EVENTS MOOVE LIGHTBOX SLIDE -----------------------//
+
     this.btnPrevious.addEventListener("click", () => {
       this.previousSlide();
     });
+
+    this.btnNext.addEventListener("click", () => {
+      this.nextSlide();
+    });
+
+    this.btnClose.addEventListener("click", () => {
+      this.closeLightbox();
+    });
+
+    //-------------------------------- KEYBOARD ACTION  --------------------------------//
+
     this.btnPrevious.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         this.closeLightbox();
       }
     });
 
-    this.btnNext.addEventListener("click", () => {
-      this.nextSlide();
-    });
     this.btnNext.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         this.closeLightbox();
@@ -37,15 +48,11 @@ export class Lightbox {
       }
     });
 
-    this.btnClose.addEventListener("click", () => {
-      this.closeLightbox();
-    });
     this.btnClose.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         this.closeLightbox();
       }
     });
-    // keyboard action
 
     this.lightboxBg.addEventListener("keydown", (event) => {
       if (event.key === "ArrowLeft") {
@@ -58,6 +65,18 @@ export class Lightbox {
         event.preventDefault();
       }
     });
+  }
+
+  openModal() {
+    this.lightboxBg.style.display = "flex";
+    this.createSlides();
+    this.body.style.overflow = "hidden";
+    this.btnClose.focus();
+  }
+
+  closeLightbox() {
+    this.lightboxBg.style.display = "none";
+    this.body.style.overflow = "scroll";
   }
 
   createSlides() {
@@ -129,17 +148,5 @@ export class Lightbox {
     while (this.lightboxContent.firstChild) {
       this.lightboxContent.removeChild(this.lightboxContent.firstChild);
     }
-  }
-
-  openModal() {
-    this.lightboxBg.style.display = "flex";
-    this.createSlides();
-    this.body.style.overflow = "hidden";
-    this.btnClose.focus();
-  }
-
-  closeLightbox() {
-    this.lightboxBg.style.display = "none";
-    this.body.style.overflow = "scroll";
   }
 }

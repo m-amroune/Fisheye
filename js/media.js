@@ -17,6 +17,9 @@ export class ImageFactory {
     this.price = props.price;
     this.alt = props.alt;
   }
+
+  // display photographer gallery images
+
   displayMedia() {
     const imgArticle = document.createElement("article");
     const imgFigure = document.createElement("figure");
@@ -48,6 +51,8 @@ export class ImageFactory {
     imgHeart.setAttribute("tabindex", "0");
     imgHeart.setAttribute("alt", "likes");
 
+    // EVENT LIKES INCREMENTATION
+
     let likeCount = document.querySelector(".total-likes-number");
     let clicked = false;
     imgHeart.addEventListener("click", (event) => {
@@ -56,14 +61,16 @@ export class ImageFactory {
       if (!clicked) {
         clicked = true;
         this.likes++;
-        likeCount.textContent++;
+        likeCount.textContent++; //  TOTAL
       } else {
         clicked = false;
         this.likes--;
-        likeCount.textContent--;
+        likeCount.textContent--; // TOTAL
       }
       imgNbrLikes.textContent = `${this.likes}`;
     });
+
+    //-------------------------- keyboard action likes incrementation -------------------------//
     imgHeart.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
         event.preventDefault();
@@ -104,6 +111,8 @@ export class VideoFactory {
     this.price = props.price;
     this.alt = props.alt;
   }
+
+  // display  photographer gallery videos
   displayMedia() {
     const videoArticle = document.createElement("article");
     const videoFigure = document.createElement("figure");
@@ -134,6 +143,9 @@ export class VideoFactory {
     videoHeart.innerHTML = `<i class="fas fa-heart" aria-hidden="true" aria-label="likes"></i>`;
     videoHeart.setAttribute("tabindex", "0");
     videoHeart.setAttribute("alt", "likes");
+
+    // EVENTS LIKES INCREMENTATION
+
     let clicked = false;
     let likeCount = document.querySelector(".total-likes-number");
     videoHeart.addEventListener("click", (event) => {
@@ -150,6 +162,9 @@ export class VideoFactory {
       }
       videoNbrLikes.textContent = `${this.likes}`;
     });
+
+    //-------------------------- keyboard action likes incrementation -------------------------//
+
     videoHeart.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
         event.preventDefault();
@@ -157,11 +172,11 @@ export class VideoFactory {
         if (!clicked) {
           clicked = true;
           this.likes++;
-          likeCount.textContent++;
+          likeCount.textContent++; // TOTAL
         } else {
           clicked = false;
           this.likes--;
-          likeCount.textContent--;
+          likeCount.textContent--; // TOTAL
         }
         videoNbrLikes.textContent = `${this.likes}`;
       }

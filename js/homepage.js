@@ -7,6 +7,8 @@ export class HomePage {
     this.headerTags = [];
   }
 
+  //  asynchrone function that recover photographers json file
+
   async fetchPhotographers() {
     const res = await fetch("data.json");
     const data = await res.json();
@@ -76,6 +78,8 @@ export class HomePage {
             card.style.display = "none";
           }
         }
+
+        // KEYBOARD ACTION for sorting by tags
       });
       listItem.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {

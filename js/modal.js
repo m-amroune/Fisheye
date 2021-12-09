@@ -12,6 +12,8 @@ export class Modal {
     this.input = document.querySelectorAll(".user-content");
   }
 
+  // EVENT LAUNCH CONTACT MODAL
+
   launchModal() {
     this.btnContact.addEventListener("click", (event) => {
       this.modalBackground.style.display = "flex";

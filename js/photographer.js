@@ -10,7 +10,7 @@ export class Photographer {
     this.portrait = portrait;
     this.photographerName = document.querySelector("#ph-name-contact");
   }
-  // function for one photographer card
+  // CARD PHOTOGRAPHER HOMEPAGE
   displayCard() {
     const listArticle = document.createElement("article");
     const linkPhotographer = document.createElement("a");
@@ -54,6 +54,7 @@ export class Photographer {
       detailsPara3,
       tagsList
     );
+    // HASHTAGS HOMEPAGE PHOTOGRAPHERS CARDS
 
     for (let j = 0; j < this.tags.length; j++) {
       let listItem = document.createElement("li");
@@ -83,6 +84,8 @@ export class Photographer {
 
     return listArticle;
   }
+
+  // BANNER PHOTOGRAPHERS PAGES
 
   displayDetails() {
     const bannerArticle = document.createElement("article");
