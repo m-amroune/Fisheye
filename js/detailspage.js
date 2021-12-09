@@ -43,6 +43,9 @@ export class DetailsPage {
         this.sortBy("Date");
         this.displayMedias();
       }
+      if (event.key === "Escape") {
+        this.dropdownOptions.style.display = "none";
+      }
     });
 
     this.popularity.addEventListener("click", (e) => {
@@ -62,6 +65,9 @@ export class DetailsPage {
         this.popularity.style.order = "1";
         this.date.style.order = "2";
         this.title.style.order = "3";
+      }
+      if (event.key === "Escape") {
+        this.dropdownOptions.style.display = "none";
       }
     });
 
@@ -83,6 +89,9 @@ export class DetailsPage {
         this.title.style.order = "1";
         this.date.style.order = "2";
         this.popularity.style.order = "3";
+      }
+      if (event.key === "Escape") {
+        this.dropdownOptions.style.display = "none";
       }
     });
 
@@ -187,6 +196,9 @@ export class DetailsPage {
       if (event.key === "Enter") {
         this.dropdownOptions.style.display = "flex";
         this.btnDown.setAttribute("aria-expanded", "true");
+      }
+      if (event.key === "Escape") {
+        this.dropdownOptions.style.display = "none";
       }
     });
   }
