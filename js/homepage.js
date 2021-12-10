@@ -38,13 +38,10 @@ export class HomePage {
 
   displayTags() {
     this.headerTags = new Set(this.headerTags);
-
     const navigation = document.createElement("nav");
     const tagsListNavigation = document.createElement("ul");
-
     tagsListNavigation.classList.add("tagListNavigation");
     navigation.classList.add("navigation");
-
     const listHashtags = this.photographersData.map(
       (headerTags) => headerTags.tags
     );
@@ -61,9 +58,7 @@ export class HomePage {
         "#" +
         HashtagsNotDuplicate[j].charAt(0).toUpperCase() +
         HashtagsNotDuplicate[j].slice(1) +
-        '<span class="sr-only">'; // only for screen readers
-      ("</span>");
-      ("</a>");
+        "</a>";
       listItem.setAttribute(
         "aria-label",
         "trier par " + HashtagsNotDuplicate[j]
