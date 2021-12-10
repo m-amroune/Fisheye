@@ -1,19 +1,11 @@
 .header {
   display: flex;
-  margin-top: 25px;
-  margin-left: 50px;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-
-  @media (max-width: 1250px) {
-    display: inline;
-  }
+  flex-direction: column;
+  padding: 40px 20px 20px 20px;
 
   & img {
-    @media (max-width: 800px) {
-      width: 100px;
-    }
+    width: 150px;
+    height: auto;
   }
 
   & .navigation {
@@ -25,7 +17,6 @@
     @media (max-width: 1250px) {
       margin-right: 0;
       padding-top: 40px;
-      width: 80%;
     }
   }
 
@@ -33,6 +24,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin: 5px 0;
 
     @media (max-width: 1250px) {
     }
@@ -56,11 +48,12 @@
 }
 
 .hashtags-photographers {
+  display: flex;
   border: 0.5px solid #c4c4c4;
   border-radius: 11px;
   font-weight: 500;
   font-size: 12px;
-  padding: 3px 7px 3px 7px;
+  padding: 2px 7px;
   color: #901c1c;
   cursor: pointer;
   margin: 2px;
