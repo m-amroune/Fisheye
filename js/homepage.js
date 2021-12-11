@@ -67,7 +67,7 @@ export class HomePage {
       listItem.addEventListener("click", () => {
         let cards = document.querySelectorAll(".cardPhotographer");
         for (let card of cards) {
-          card.style.display = "flex";
+          card.style.display = "block";
 
           if (!card.textContent.includes(HashtagsNotDuplicate[j])) {
             card.style.display = "none";

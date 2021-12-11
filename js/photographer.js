@@ -73,7 +73,7 @@ export class Photographer {
         let cards = document.querySelectorAll(".cardPhotographer");
 
         for (let card of cards) {
-          card.style.display = "flex";
+          card.style.display = "block";
 
           if (!card.textContent.includes(this.tags[j])) {
             card.style.display = "none";
