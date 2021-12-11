@@ -17,6 +17,7 @@
     bottom: 50%;
     transform: translateY(-50%);
     justify-content: center;
+    width: 100%;
 
     & .lightbox-close {
       position: absolute;
@@ -54,7 +55,7 @@
   background-color: #fff;
   width: auto;
   height: auto;
-  overflow: auto;
+  overflow: hidden;
   z-index: 100;
   align-items: center;
 }
@@ -68,9 +69,16 @@
 }
 
 .media-work-slide {
-  max-height: calc(100vh - 80px);
+  max-height: 600px;
   max-width: 1000px;
-  border-radius: 5px;
+
+  @media (max-width: 600px) {
+    max-width: 250px;
+    max-height: 1200px;
+    min-height: 600px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
 }
 
 .title-work-slide {

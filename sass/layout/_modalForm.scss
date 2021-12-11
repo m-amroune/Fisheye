@@ -10,10 +10,19 @@
   margin: 0 auto;
   top: 10%;
   left: 15%;
+  box-sizing: content-box;
 
   @media (max-width: 600px) {
-    width: none;
-    left: 5%;
+    display: none;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    height: 600px;
   }
 }
 
@@ -21,11 +30,13 @@
   display: flex;
   flex-direction: column;
 
-  & input {
-    border: none;
-    width: 400px;
-    height: 35px;
-    border-radius: 5px;
+  @media (max-width: 600px) {
+    width: 100%;
+    & input {
+      border: none;
+      height: 35px;
+      border-radius: 5px;
+    }
   }
 }
 
@@ -33,10 +44,11 @@
   position: relative;
   background: none;
   border: none;
-
   top: -55px;
   left: 370px;
-
+  @media (max-width: 600px) {
+    left: 350px;
+  }
   & span {
     cursor: pointer;
     color: #fff;
@@ -62,6 +74,18 @@
 .form-data {
   display: flex;
   flex-direction: column;
+
+  & input {
+    min-width: 390px;
+    padding-top: 10px;
+    @media (max-width: 600px) {
+      padding-top: 30px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    margin-top: 20px;
+  }
 }
 
 .form-submit {
@@ -70,5 +94,12 @@
   background-color: #901c1c;
   color: #fff;
   cursor: pointer;
-  margin-top: 5px;
+  margin: auto 0;
+  margin-top: 10px;
+
+  @media (max-width: 600px) {
+    margin: auto;
+    margin-top: 10px;
+    width: 150px !important;
+  }
 }
