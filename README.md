@@ -1,4 +1,14 @@
-Projet 6 : Créez un site accessible pour une plateforme de photographes
+
+# FishEye
+
+Projet formation OpenClassrooms : Créez un site accessible pour une plateforme de photographes
+
+## Skills
+
+   - Developing a modular web application with design patterns
+   - Ensuring the accessibility of a website
+   - Writing maintainable JavaScript code
+
 
 ## Languages and Technologie
 
